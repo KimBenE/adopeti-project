@@ -1,0 +1,112 @@
+#logo{
+    float :right ;
+    width: 100%;
+}
+
+
+h1{
+    color:rgb(228, 71, 66);
+    text-align: center;
+
+}
+
+h2{
+    color:rgb(228, 71, 66);
+    text-align: center;
+    font-size:30px;
+}
+.menu{
+    text-align: right;
+    font-size:20px;
+    background-color: rgb(156, 144, 150);
+}
+.page-image-title {
+    position: relative;
+    margin-bottom: 20px;
+}
+.explanation text{
+    text-align: center;
+    
+}
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: rgb(228, 71, 66);
+    color: white;
+  }
+  
+.fst-italic{
+    text-align: center;
+}
+#headline{
+    color:rgb(228, 71, 66);
+
+}
+
+.image{
+    text-align: center;
+}
+
+  /**/
+
+
+.form-select {
+    width:auto;
+    font-size:medium;
+
+}
+
+#numberOfChildren{
+    width:10%;
+}
+Form {
+    width: 100%;
+
+    padding-left: 10%;
+    padding-bottom: 5%;
+    
+
+}
+
+#left{
+    float: left;
+    width: auto;
+    margin-right:10%;
+}
+
+
+#right{
+    float: left;
+    width: auto;
+    margin-right:10%;
+
+}
+
+p{
+    font-weight: bold
+}
+
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+body{
+    width: 100%;
+
+    height: 97%;
+}

@@ -1,0 +1,74 @@
+.container {
+  
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+.col-lg-4{
+  text-align: center;
+}
+input {
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+#logo{
+  float :right ;
+  width: 100%;
+}
+
+
+h1{
+  color:rgb(228, 71, 66);
+  text-align: center;
+}
+
+h2{
+  color:rgb(228, 71, 66);
+  text-align: center;
+  font-size:30px;
+}
+.menu{
+  text-align: right;
+  font-size:20px;
+  background-color: rgb(156, 144, 150);
+}
+.page-image-title {
+  position: relative;
+  margin-bottom: 20px;
+}
+.explanation text{
+  text-align: center;
+  
+}
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: rgb(228, 71, 66);
+  color: white;
+}
+.fst-italic{
+  text-align: center;
+}
+#headline{
+  color:rgb(228, 71, 66);
+
+}
+
+.image{
+  text-align: center;
+}
+
+/*********/
