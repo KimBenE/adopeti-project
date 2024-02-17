@@ -15,14 +15,7 @@ const createTables = [
         UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     );`,
 
-    `CREATE TABLE IF NOT EXISTS UsersNotifications (
-        NotificationID INT AUTO_INCREMENT PRIMARY KEY,
-        UserID INT,
-        Message VARCHAR(255) NOT NULL,    
-        emailAddress VARCHAR(20),
-        CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (UserID) REFERENCES Users(UserID)
-    );`,
+
 
     `CREATE TABLE IF NOT EXISTS Animals (
         AnimalID INT AUTO_INCREMENT PRIMARY KEY,
@@ -90,6 +83,14 @@ const createTables = [
         CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (UserID) REFERENCES Users(UserID),
         FOREIGN KEY (AssociationID) REFERENCES Associations(AssociationID)
+    );`,
+    `CREATE TABLE IF NOT EXISTS UsersNotifications (
+        NotificationID INT AUTO_INCREMENT PRIMARY KEY,
+        UserID INT,
+        Message VARCHAR(255) NOT NULL,    
+        emailAddress VARCHAR(255),
+        CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (UserID) REFERENCES Users(UserID)
     );`
 ]
 

@@ -151,6 +151,32 @@ router.post('/updatePreferences', (req, res) => {
     });
 });
 
+// Define a route to handle form submission
+router.post('/submitForm', async (req, res) => {
+    // Extract form data from the request body
+    const { name, email, message } = req.body;
+
+    // Check if all required fields are provided
+    if (!name || !email || !message) {
+        return res.status(400).json({ error: 'All fields are required' });
+    }
+
+    try {
+        // Send email using the provided data
+        await sendEmail('Contact Form Submission', `
+            <h2>New Contact Form Submission</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Message:</strong> ${message}</p>
+        `);
+
+        // Respond with success message
+        return res.status(200).json({ message: 'Form submitted successfully' });
+    } catch (error) {
+        console.error('Error submitting form:', error);
+        return res.status(500).json({ error: 'Internal server error' });
+    }
+});
 
 
 // function to validate user credentials

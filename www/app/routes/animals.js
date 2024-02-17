@@ -3,55 +3,93 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db'); 
 const { notifyMatchingAdopters } = require('../services/notificationService');
+const request = require('request');
 
-// Define a route to handle animal search
-router.get('/search', (req, res) => {
-  // Extract query parameters
-  const { associationId, animalType, breed, age, residentialArea } = req.query;
-
-  // Start constructing the query
-  let query = 'SELECT * FROM animals WHERE 1=1';
-  let queryParams = [];
-
-  // Dynamically append filters to the query if they are provided
-  if (associationId) {
+router.get('/search', async (req, res) => {
+    const { associationId, animalType, breed, age, residentialArea } = req.body;
+  
+    let query = 'SELECT * FROM animals WHERE 1=1';
+    let queryParams = [];
+  
+    if (associationId) {
       query += ' AND AssociationID = ?';
       queryParams.push(associationId);
-  }
-
-  if (animalType) {
+    }
+  
+    if (animalType) {
       query += ' AND AnimalType = ?';
       queryParams.push(animalType);
-  }
-
-  if (breed) {
+    }
+  
+    if (breed) {
       query += ' AND Breed = ?';
       queryParams.push(breed);
-  }
-
-  if (age) {
+    }
+  
+    if (age) {
       query += ' AND Age = ?';
       queryParams.push(age);
-  }
-
-  if (residentialArea) {
+    }
+  
+    if (residentialArea) {
       query += ' AND ResidentialArea = ?';
       queryParams.push(residentialArea);
-  }
-
-  query += ' AND Status = "available"';
-
-  // Execute the query with the filters
-  db.query(query, queryParams, (err, results) => {
-      if (err) {
-          console.error('Error executing database query:', err);
-          return res.status(500).json({ error: 'Internal server error' });
+    }
+  
+    query += ' AND Status = "available"';
+  
+    try {
+      const animals = await new Promise((resolve, reject) => {
+        db.query(query, queryParams, (err, results) => {
+          if (err) {
+            console.error('Error executing database query:', err);
+            reject(err);
+          }
+          resolve(results);
+        });
+      });
+  
+      const searchResults = [];
+      const promises = [];
+  
+      for (const animal of animals) {
+        const animalType = animal.AnimalType || req.body.animalType;
+        const breed = animal.Breed || req.body.breed;
+  
+        const promise = new Promise((resolve, reject) => {
+          request.get({
+            url: `https://api.api-ninjas.com/v1/${animalType}s?name=${encodeURIComponent(breed)}`,
+            headers: {
+              'X-Api-Key': 'itYKoba23rUcrZdeBmozvQ==7jeNQhY0On2LjzkY'
+            },
+          }, function(error, response, body) {
+            if (error) reject(error);
+            else if (response.statusCode !== 200) reject(`Error: ${response.statusCode}, ${body.toString('utf8')}`);
+            else {
+              const breedInfo = JSON.parse(body);
+              const searchResult = { ...animal, breedInfo };
+              searchResults.push(searchResult);
+              resolve();
+            }
+          });
+        });
+  
+        promises.push(promise);
       }
-
-      // Return the search results
-      res.json(results);
+  
+      // Wait for all API requests to complete
+      await Promise.all(promises);
+  
+      res.json(searchResults);
+  
+    } catch (error) {
+      console.error('Error during search:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
   });
-});
+  
+  
+
 
 // Define a route to handle                                                   
 router.post('/create', async (req, res) => {

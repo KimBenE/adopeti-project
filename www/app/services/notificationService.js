@@ -23,24 +23,23 @@ async function notifyMatchingAdopters(newAnimal) {
 
     // Find users with matching preferences
     const matchQuery = `
-        SELECT UserID
-        FROM AdopterPreferences
-        WHERE AnimalType = ?
-        AND JSON_CONTAINS(Breed, ?, '$')
-        AND CAST(JSON_EXTRACT(Age, '$[0]') AS SIGNED) <= ?
-        AND CAST(JSON_EXTRACT(Age, '$[1]') AS SIGNED) >= ?
-        AND JSON_CONTAINS(ResidentialArea, ?, '$')
+    SELECT UserID
+    FROM AdopterPreferences
+    WHERE AnimalType = ?
+    AND JSON_CONTAINS(Breed, JSON_QUOTE(?), '$')
+    AND CAST(JSON_EXTRACT(Age, '$[0]') AS SIGNED) <= ?
+    AND CAST(JSON_EXTRACT(Age, '$[1]') AS SIGNED) >= ?
+    AND JSON_CONTAINS(ResidentialArea, JSON_QUOTE(?), '$'); 
         `;
-  
         try {
-            await db.query(matchQuery, [newAnimal.animalType, `\"${newAnimal.breed}\"`, newAnimal.age, newAnimal.age, `\"${newAnimal.residentialArea}\"`], (err, userResults) => {
+            await db.query(matchQuery, [newAnimal.animalType, `${newAnimal.breed}`, newAnimal.age, newAnimal.age, `${newAnimal.residentialArea}`], (err, userResults) => {
                 userResults.forEach(async (match) => {
                     // For each match, retrieve user contact information and send notification
                     const user = await getUserById(match.UserID);
-                    const userEmail = user.emailAddress; // Assuming you have the user's email
+                    const userEmail = user.emailAddress;
         
                     // Send notification email
-                    sendNotificationEmail(userEmail, newAnimal); 
+                    sendNotificationEmail(userEmail, newAnimal, match.UserID); 
                 });
 
             })
@@ -69,7 +68,7 @@ async function getUserById(userId) {
     });
 }
 
-function sendNotificationEmail(email, animal) {
+function sendNotificationEmail(email, animal, userId) {
     const emailSubject = 'New match just added!';
     const emailHtml = `
         <html>
@@ -92,10 +91,10 @@ function sendNotificationEmail(email, animal) {
     // point to the template folder
     const handlebarOptions = {
         viewEngine: {
-            partialsDir: path.resolve('app/views/'),
+            partialsDir: path.resolve('www/app/views/'),
             defaultLayout: false,
         },
-        viewPath: path.resolve('app/views/'),
+        viewPath: path.resolve('www/app/views/'),
     };
 
     // use a template file with nodemailer
@@ -120,12 +119,22 @@ function sendNotificationEmail(email, animal) {
             return res.status(500).json({ error: 'Error sending email' });
         } else {
             console.log('Email sent: ' + info.response);
+            const insertNotificationQuery = `
+            INSERT INTO usersnotifications (UserID, Message, emailAddress)
+            VALUES (?, ?, ?)`;
+            db.query(insertNotificationQuery, [userId, emailSubject, email]);
             return res.status(200).json({ message: 'Notification sent successfully' });
         }
     });
 }
 
+function sendEmail(email, animal, userId) {
+
+
+}
+
 
 module.exports = {
     notifyMatchingAdopters,
+    sendEmail
 };
