@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <script src="../js/sadna.SignUp_adopt.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/sadna.SignUp_adopt.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=Sivandevice-width, initial-scale=1">
+    <title> AdoPtei </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.sadna_SignUp_adopt.css">
+  </head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+          <div class="container-fluid">
+            <img class="bigDog" src="../נספחים/LOGO Pet-no background.png" alt="Bootstrap"  width="150" height="100" alt=""> 
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="../html/sadna_page1.html" >Home</a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link" href="../html/sadna_page2.html"> dogs for adoption</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../html/sadna_page3.html"> Give away</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../html/sadna_page4.html"> Contact </a>
+                </li> 
+            </ul>
+
+
+
+            </div>
+          </div>
+        </nav>
+        <br> <br> <br> <br> <br> <br>  
+      </header>
+
+
+
+
+
+<main>
+                    
+  <h2>Animal ADOPTION form </h2> <br> 
+
+  <form id="Form" method="post"  name="Form" onsubmit="return ValidateContactForm();" >
+      
+  <div class="mb-3 " id="left">
+
+      <h3> Personal details about you: </h3> <br>
+          <p> <label for="InputName "class="form-label"> Name <input type="name" name="name" class="form-control" id="InputName" placeholder="Name"></label></p>
+              
+          <p><label for="InputEmail1" class="form-label">Email address<input type="email" name="email" class="form-control" id="floatingInput" aria-describedby="emailHelp" placeholder="name@example.com"></label></p>
+          
+          <label for="Inputphone" class="form-label"><p>Phone</p><input type="phone" name="phone" class="form-control" id="Inputphone" placeholder="050-0000000" >
+              <input type="checkbox" name="DoNotCall" 
+              onclick="EnableDisable(this);"> Please do not call me.</label>
+          <br>
+          <p> <label for="InputAge "class="form-label"> What is your age? </label></p>
+                  <input type="text" id="age" name="age" Placeholder="26+" required>  
+                  
+        
+          <br><br>
+           <p>What are you doing in life ?</p>
+           <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="work">
+            <label class="form-check-label" for="work">work</label>
+          </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="student" >
+            <label class="form-check-label" for="student">student</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="at home" >
+            <label class="form-check-label" for="at home">at home</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="Other" >
+            <label class="form-check-label" for="Other">Other</label>
+        </div>
+          <br>
+
+          <p><label for="type_of_house">What type of house do you live in?</label></p>
+          <div>
+          <select id="type_of_house" name="type_of_house" required>
+            <option value="">Choose</option>
+            <option value="garden"> i have garden\yard</option>
+            <option value="balcony">I have a balcony</option>
+            <option value="apartment">A small apartment </option>
+          </select>
+          </div>
+      <br>
+
+      <p><label for="type_of_tenants">Who are the tenants in the house?</label></p>
+      <div>
+      <select id="type_of_tenants" name="type_of_tenants" required>
+        <option value="">Choose</option>
+        <option value="garden"> I have small children at home</option>
+        <option value="have_dog">I already have a dog at home</option>
+        <option value="have_cat">I already have a cat at home</option>
+        <option value="have_animal">I already have a other animal at home</option>
+
+      </select>
+      </div>
+<br>
+      <p><label for="routine">How many hours are you in your <br>routine away from home? </label></p>
+          <div>
+          <select id="routine" name="routine" required>
+            <option value="">Choose</option>
+            <option value="1-5">1-5 hours</option>
+            <option value="5-12">5-12 hours</option>
+            <option value="12">more then 12 hours</option>
+          </select>
+          </div>
+
+<br>
+
+    <div class="mb-3 ">
+      <p><label for=" experience_with_animals">Do you have experience with <br>animals in the past? </label></p>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="children" id="Yes" onclick="showNextQuestion()">
+              <label class="form-check-label" for="Yes">Yes</label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="children" id="No" onclick="hideNextQuestion()">
+              <label class="form-check-label" for="No">No</label> 
+          </div>
+          
+      
+          <div id="nextQuestion" style="display:none;"> 
+
+            <label for="experience "class="form-label"> If so, list them here:</label><br>
+            <textarea id="experience_issues_details_text" name="experience_issues_details_text"></textarea>
+
+          </div>
+      </div>
+                
+<br> <br>
+  </div>
+       
+  
+
+
+
+  
+
+
+   
+  <div class="radio-group" id="right">
+      <h3> Personal details about the animal you wont: </h3> <br>
+
+      <p><label for="animal_type">what is the type of animal you wont to adopt? </label></p>
+            <div>
+            <select id="animal_type" name="animal_type" required>
+              <option value="">Choose</option>
+              <option value="dog">dog</option>
+              <option value="cat">cat</option>
+              <option value="notCare">I do not care</option>
+            </select>
+            </div>
+<br>
+      <p><label for="animal_age" >Do you have a preference for the age of the animal? </label></p>
+          <div>
+          <select id="animal_age" name="animal_age" required>
+            <option value="">Choose</option>
+            <option value="puppy">puppy  </option>
+            <option value="grown-up">grown up </option>
+            <option value="old">old</option>
+            <option value="notCare">I do not care</option>
+          </select>
+          </div>
+<br>
+      <p><label for="animal_size" >Do you have a desire for the size of the animal to adopt? </label></p>
+      <div>
+      <select id="animal_size" name="animal_size" required>
+        <option value="">Choose</option>
+        <option value="Little">Little  </option>
+        <option value="medium">medium </option>
+        <option value="big">big</option>
+        <option value="notCare">I do not care</option>
+      </select>
+      </div>
+<br>
+
+          
+</div> 
+
+
+
+        <br> <br>
+
+<section id="right" > 
+        <button id="submit"class="btn btn-outline-danger" type="submit">submit</button>  
+        <button id="reset"class="btn btn-outline-danger" type="reset">reset</button>
+</section>
+<br> <br>
+      
+
+</div>       
+</form>
+
+
+
+</main>
+</body>
+<!--
+<footer>
+  &copy; AdoPeti
+</footer>
+-->
+</html>

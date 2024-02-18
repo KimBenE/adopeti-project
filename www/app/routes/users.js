@@ -44,14 +44,14 @@ router.post('/login', async (req, res) => {
         
         if (isValid) {
             // Authentication successful
-            return res.status(200).json({ message: 'Login successful' });
+            return res.status(200).json({ message: 'Login successful', role: 'user', ok: true });
         } else {                                                                    
             // Authentication failed
-            return res.status(401).json({ error: 'Invalid credentials' });
+            return res.status(401).json({ error: 'Invalid credentials', ok: false });
         }
     } catch (error) {
         // Handle errors like database errors
-        return res.status(500).json({ error });
+        return res.status(500).json({ error, ok: false });
     }
 });
 

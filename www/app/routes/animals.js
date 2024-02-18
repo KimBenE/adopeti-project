@@ -89,8 +89,6 @@ router.get('/search', async (req, res) => {
   });
   
   
-
-
 // Define a route to handle                                                   
 router.post('/create', async (req, res) => {
   // Extract animal information from the request body

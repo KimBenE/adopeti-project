@@ -1,0 +1,120 @@
+
+body,html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    /* padding: 20px; */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ffffff, #fd92c4, #fa2a2a);
+    z-index: -1; /* background is behind other content */
+}
+  
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 50px;
+    z-index: 1; 
+    position: relative;
+}
+  
+  h1 {
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    width: 100%;
+    background-color:white;
+    color:  rgb(228, 71, 66);
+    padding: 10px;
+    border: 1px solid rgb(228, 71, 66);
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: rgb(228, 71, 66);
+    color:  white;
+
+  }
+  main {
+    flex: 1;
+    padding: 20px;
+}
+
+/*page1*/
+
+  #logo{
+    float :right ;
+    width: 100%;
+}
+
+
+h1{
+    color:rgb(228, 71, 66);
+    text-align: center;
+}
+
+h2{
+    color:rgb(228, 71, 66);
+    text-align: center;
+    font-size:30px;
+}
+.menu{
+    text-align: right;
+    font-size:20px;
+    background-color: rgb(156, 144, 150);
+}
+.page-image-title {
+    position: relative;
+    margin-bottom: 20px;
+}
+.explanation text{
+    text-align: center;
+    
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(228, 71, 66);
+    color: white;
+    bottom: 0; 
+    position: relative;
+    width: 100%;
+}
+.fst-italic{
+    text-align: center;
+}
+#headline{
+    color:rgb(228, 71, 66);
+
+}
+
+.image{
+    text-align: center;
+}
+
