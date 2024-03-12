@@ -1,0 +1,84 @@
+body {
+  font-family: "Karma", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Make sure the body fills the whole viewport height */
+  margin: 0; /* Remove default margin */
+}
+
+.container {
+  margin: 0 auto;
+  border: 2px solid #ddd;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+h1 {
+  color: rgb(228, 71, 66);
+  text-align: center;
+  font-family: "Karma";
+}
+
+h2 {
+  color: rgb(228, 71, 66);
+  text-align: center;
+  font-family: "Karma";
+  font-size: 30px;
+}
+
+.menu {
+  text-align: right;
+  font-size: 20px;
+  background-color: rgb(156, 144, 150);
+}
+
+.page-image-title {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.explanation text {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(228, 71, 66);
+  color: white;
+  margin-top: auto; /* Push the footer to the bottom */
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-lg-4 {
+  text-align: center;
+  margin: 10px; /* Optional: Add margin between columns */
+}
+
+main {
+  flex: 1; /* Make the main content area grow to fill available space */
+}

@@ -1,0 +1,67 @@
+
+body {font-family: "Karma", sans-serif}
+
+.w3-bar-block .w3-bar-item {padding:20px}
+
+p{
+    
+    text-align: center;
+
+}
+
+h1{
+    color: rgb(228, 71, 66);
+    font-family: "Karma";
+    text-align: center;
+}
+
+h2{
+    color: rgb(228, 71, 66);
+    text-align: center;
+    font-size:30px;
+}
+
+.menu{
+    text-align: right;
+    font-size:20px;
+    background-color: rgb(165, 235, 238);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(228, 71, 66);
+    color: white;
+    bottom: 0; 
+    position: relative;
+    width: 100%;
+  }
+  .footer-push {
+    flex-grow: 1; /* Push the footer to the bottom */
+  }
+  
+
+  main {
+    flex: 1; /* Make the main content area grow to fill available space */
+  }
+/**/
+.call-to-action {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .call-to-action a {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid lightsalmon;
+    border-radius: 5px;
+    color: lightsalmon;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .call-to-action a:hover {
+    background-color: lightsalmon;
+    color: #fff;
+  }
+  

@@ -1,0 +1,95 @@
+
+body {
+  font-family: "Karma", sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensure the body takes up the full height of the viewport */
+  display: flex;
+  flex-direction: column; 
+}
+
+.w3-bar-block .w3-bar-item {padding:20px}
+
+  .container {
+    max-width: 400px;
+    max-height: 500px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 40px;
+    z-index: 1; 
+    position: relative;
+  }
+
+
+  label {
+    display: block;
+    margin-bottom: 1px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    width: 100%;
+    background-color:white;
+    color:  rgb(228, 71, 66);
+    padding: 10px;
+    border: 1px solid rgb(228, 71, 66);
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  button:hover {
+    background-color: rgb(228, 71, 66);
+    color:  white;
+
+  }
+  
+
+  p{
+      
+      text-align: center;
+  
+  }
+  
+  h1 {
+    color: rgb(228, 71, 66);
+    font-family: "Karma";
+    text-align: center;
+  }
+  
+  h2{
+      color: rgb(228, 71, 66);
+      text-align: center;
+      font-family: "Karma";
+      font-size:30px;
+  }
+  
+  .menu{
+      text-align: right;
+      font-size:20px;
+      background-color: rgb(165, 235, 238);
+  }
+  
+  footer {
+      text-align: center;
+      padding: 10px;
+      background-color: rgb(228, 71, 66);
+      color: white;
+      bottom: 0; 
+      position: relative;
+      width: 100%;
+    }
+    .footer-push {
+      flex-grow: 1; /* Push the footer to the bottom */
+    }
+    
+    main {
+      flex: 1; /* Make the main content area grow to fill available space */
+      padding: 20px;
+  }
