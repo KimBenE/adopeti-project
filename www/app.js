@@ -3,12 +3,16 @@ const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
+const path = require('path');
 const port = process.env.PORT || 3000;
 const db = require('./app/db');
 require('./dbInit');
 
+// Serve static files from the 'uploads/' folder
+app.use(express.static(path.join(__dirname, 'uploads')));
+
 // Allow requests from localhost
-const allowedOrigins = ['http://localhost'];
+const allowedOrigins = ['http://localhost', 'http://adopeti.xyz', 'http://adopeti.xyz'];
 app.use(cors({
     origin: function(origin, callback) {
         if (!origin || allowedOrigins.includes(origin)) {
@@ -36,7 +40,7 @@ app.use('/users', usersRoutes);
 app.use('/animals', animalsRoutes);
 app.use('/associations', associationsRoutes);
 
-
-app.listen(port, () => {
+const host = '0.0.0.0';
+app.listen(port, host, () => {
   console.log(`Server is running on port ${port}`);
 });

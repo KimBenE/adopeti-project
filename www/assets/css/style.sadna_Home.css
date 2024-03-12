@@ -1,0 +1,116 @@
+body {font-family: "Karma", sans-serif}
+
+.w3-bar-block .w3-bar-item {padding:20px}
+
+p{
+    
+    text-align: center;
+    font-weight: bold;
+
+
+}
+
+h1{
+    color: rgb(228, 71, 66);
+    font-family: "Karma";
+    text-align: center;
+}
+
+h2{
+    color: rgb(228, 71, 66);
+    text-align: center;
+    font-family: "Karma";
+    font-size:30px;
+}
+
+.menu{
+    text-align: right;
+    font-size:20px;
+    background-color: rgb(165, 235, 238);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(228, 71, 66);
+    color: white;
+    bottom: 0; 
+    position: relative;
+    width: 100%;
+  }
+  .footer-push {
+    flex-grow: 1; /* Push the footer to the bottom */
+  }
+  
+  main {
+    flex: 1; /* Make the main content area grow to fill available space */
+  }
+
+/**/
+
+.image{
+    text-align: center;
+
+}
+
+
+/***/
+
+
+
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.preferences {
+  display: flex;
+  align-items: center;
+}
+
+label, select {
+  margin-right: 10px;
+}
+
+.popupContainer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1000; /* Ensure pop-up appears above other content */
+}
+
+.popupContent {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -4,7 +4,7 @@ const db = require('../db'); // Import the database connection
 
 // Define a route to handle user registration
 router.post('/register', (req, res) => {
-    const { username, password, name, address, phone, emailAddress, surveyLink } = req.body;
+    const { username, password, association_name, address, phone, emailAddress, surveyLink } = req.body;
   
     // Check if the username already exists in the database
     const checkQuery = 'SELECT * FROM associations WHERE username = ?';
@@ -20,7 +20,7 @@ router.post('/register', (req, res) => {
       } else {
         // Username is available; insert the new user into the database
         const insertQuery = 'INSERT INTO associations ( username, password, name, address, phone, emailAddress, surveyLink) VALUES (?, ?, ?, ?, ?, ?, ?)';
-        db.query(insertQuery, [  username, password, name, address, phone, emailAddress, surveyLink], (err, results) => {
+        db.query(insertQuery, [  username, password, association_name, address, phone, emailAddress, surveyLink], (err, results) => {
           if (err) {
             console.error('Error executing database query:', err);
             return res.status(500).json({ error: 'Internal server error' });
@@ -58,7 +58,7 @@ router.post('/login', async (req, res) => {
 // Define a route to handle user update
 router.patch('/update/:username', (req, res) => {
     const { username } = req.params;
-    const { password, name, address, phone, emailAddress, surveyLink } = req.body;
+    const { password, association_name, address, phone, emailAddress, surveyLink } = req.body;
 
     // Prepare an array to hold SQL set 
     let setClauses = [];
@@ -69,9 +69,9 @@ router.patch('/update/:username', (req, res) => {
         queryParams.push(password);
     }
     // Repeat for other fields
-    if (name !== undefined) {
-        setClauses.push('name = ?');
-        queryParams.push(name);
+    if (association_name !== undefined) {
+        setClauses.push('association_name = ?');
+        queryParams.push(association_name);
     }
     if (address !== undefined) {
         setClauses.push('address = ?');
@@ -119,6 +119,33 @@ router.patch('/update/:username', (req, res) => {
         }
     });
 }); 
+
+router.get('/:username', (req, res) => {
+    const username = req.params.username;
+
+    const query = `
+        SELECT *
+        FROM associations
+        WHERE Username = ?;
+    `;
+
+    db.query(query, [username], (err, results) => {
+        if (err) {
+            console.error('Error getting association details:', err);
+            res.status(500).json({ error: 'Internal server error' });
+            return;
+        }
+
+        if (results.length > 0) {
+            // Association details found
+            const association = results[0];
+            res.status(200).json(association);
+        } else {
+            // Association not found
+            res.status(404).json({ error: 'Association not found' });
+        }
+    });
+});
 
 // function to validate user credentials
 function isValidCredentials(username, password) {

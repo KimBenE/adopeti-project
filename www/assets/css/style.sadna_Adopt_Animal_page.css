@@ -1,0 +1,56 @@
+body {
+  font-family: "Karma", sans-serif;
+}
+
+.w3-bar-block .w3-bar-item {
+  padding: 20px;
+}
+
+p {
+  text-align: center;
+  font-weight: bold;
+}
+
+h1 {
+  color: rgb(228, 71, 66);
+  font-family: "Karma";
+  text-align: center;
+}
+
+h2 {
+  color: rgb(228, 71, 66);
+  text-align: center;
+  font-family: "Karma";
+  font-size: 30px;
+}
+
+.menu {
+  text-align: right;
+  font-size: 20px;
+  background-color: rgb(165, 235, 238);
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(228, 71, 66);
+  color: white;
+  position: fixed; /* Fixed footer positioning */
+  bottom: 0; /* Position footer at the bottom */
+  width: 100%; /* Full width of the viewport */
+}
+
+/* Adjustments to layout */
+.w3-row {
+  display: flex;
+}
+
+.w3-col {
+  flex: 1;
+}
+
+/* Ensure image does not exceed its container */
+#animalImage {
+  max-width: 100%; /* Ensure image does not exceed its container */
+  height: auto; /* Maintain aspect ratio */
+}

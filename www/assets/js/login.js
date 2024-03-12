@@ -7,7 +7,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     const password = formData.get("password");
 
     // Make request to backend API
-    fetch("http://localhost:3000/users/login", {
+    fetch("http://adopeti.xyz:3000/users/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -17,7 +17,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     .then(response => {
         if (!response.ok) {
             // If first login attempt fails, try association login
-            return fetch("http://localhost:3000/associations/login", {
+            return fetch("http://adopeti.xyz:3000/associations/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -42,9 +42,9 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
             // redirect according to user type
             if (data.role === "user") {
-                window.location.href = "home_page_user.html";
+                window.location.href = "assets/html/sadna_Home.html";
             } else if (data.role === "association") {
-                window.location.href = "home_page_association.html";
+                window.location.href = "assets/html/sadna_Home_Association.html";
             }
         } else {
             // Unsuccessful login

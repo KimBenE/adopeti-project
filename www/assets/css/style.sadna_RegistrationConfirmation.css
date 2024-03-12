@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karma", sans-serif;
+  min-height: 100vh;
+  margin: 0; /* Remove default margin */
+  display: flex;
+  flex-direction: column;
+}
+
+.w3-bar-block .w3-bar-item {
+  padding: 20px;
+}
+
+p {
+  text-align: center;
+}
+
+h1 {
+  color: rgb(228, 71, 66);
+  font-family: "Karma";
+  text-align: center;
+}
+
+h2 {
+  color: rgb(228, 71, 66);
+  text-align: center;
+  font-family: "Karma";
+  font-size: 30px;
+}
+
+.menu {
+  text-align: right;
+  font-size: 20px;
+  background-color: rgb(165, 235, 238);
+}
+
+main {
+  flex: 1; /* Make the main content area grow to fill available space */
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(228, 71, 66);
+  color: white;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}

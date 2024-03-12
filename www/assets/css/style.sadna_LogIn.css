@@ -1,43 +1,30 @@
 
-body,html {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    /* padding: 20px; */
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #ffffff, #fd92c4, #fa2a2a);
-    z-index: -1; /* background is behind other content */
+body {
+  font-family: "Karma", sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensure the body takes up the full height of the viewport */
+  display: flex;
+  flex-direction: column; 
 }
-  
-.container {
+
+.w3-bar-block .w3-bar-item {padding:20px}
+
+  .container {
     max-width: 400px;
+    max-height: 500px;
     margin: 0 auto;
     border: 1px solid #ddd;
     text-align: center;
-    padding: 50px;
+    padding: 40px;
     z-index: 1; 
     position: relative;
-}
-  
-  h1 {
-    text-align: center;
   }
-  
+
+
   label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
   }
   
   input {
@@ -54,6 +41,7 @@ body,html {
     padding: 10px;
     border: 1px solid rgb(228, 71, 66);
     cursor: pointer;
+    margin: 5px;
   }
   
   button:hover {
@@ -61,60 +49,47 @@ body,html {
     color:  white;
 
   }
-  main {
-    flex: 1;
-    padding: 20px;
-}
+  
 
-/*page1*/
-
-  #logo{
-    float :right ;
-    width: 100%;
-}
-
-
-h1{
-    color:rgb(228, 71, 66);
+  p{
+      
+      text-align: center;
+  
+  }
+  
+  h1 {
+    color: rgb(228, 71, 66);
+    font-family: "Karma";
     text-align: center;
-}
-
-h2{
-    color:rgb(228, 71, 66);
-    text-align: center;
-    font-size:30px;
-}
-.menu{
-    text-align: right;
-    font-size:20px;
-    background-color: rgb(156, 144, 150);
-}
-.page-image-title {
-    position: relative;
-    margin-bottom: 20px;
-}
-.explanation text{
-    text-align: center;
+  }
+  
+  h2{
+      color: rgb(228, 71, 66);
+      text-align: center;
+      font-family: "Karma";
+      font-size:30px;
+  }
+  
+  .menu{
+      text-align: right;
+      font-size:20px;
+      background-color: rgb(165, 235, 238);
+  }
+  
+  footer {
+      text-align: center;
+      padding: 10px;
+      background-color: rgb(228, 71, 66);
+      color: white;
+      bottom: 0; 
+      position: relative;
+      width: 100%;
+    }
+    .footer-push {
+      flex-grow: 1; /* Push the footer to the bottom */
+    }
     
-}
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: rgb(228, 71, 66);
-    color: white;
-    bottom: 0; 
-    position: relative;
-    width: 100%;
-}
-.fst-italic{
-    text-align: center;
-}
-#headline{
-    color:rgb(228, 71, 66);
-
-}
-
-.image{
-    text-align: center;
-}
-
+    main {
+      flex: 1; /* Make the main content area grow to fill available space */
+      padding: 20px;
+  }
