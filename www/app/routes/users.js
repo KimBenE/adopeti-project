@@ -134,8 +134,6 @@ router.post('/updatePreferences', (req, res) => {
     const updateQuery = `
         INSERT INTO AdopterPreferences (UserID, AnimalType, Gender, Breed, Age, ResidentialArea)
         VALUES (?, ?, ?, ?, ?, ?)
-        INSERT INTO AdopterPreferences (UserID, AnimalType, Gender, Breed, Age, ResidentialArea)
-        VALUES (?, ?, ?, ?, ?, ?)
         ON DUPLICATE KEY UPDATE
         AnimalType = VALUES(AnimalType),
         Gender = VALUES(Gender),

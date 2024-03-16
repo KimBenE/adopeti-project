@@ -12,30 +12,7 @@ async function savePreferences() {
     if (animalAge === 'adult')
         Age = [2,8];
     if (animalAge === 'senior')
-        Age = [9,100];
-
-        
-    var breeds = [];
-
-    if (AnimalType === "Dog") {
-      breeds = ["Labrador Retriever", "Golden Retriever", "French Bulldog", "German Shepherd", "Doberman"]; // Add dog breeds
-    } else if (AnimalType === "Cat") {
-      breeds = ["1. American Shorthair", "Persian", "Siamese", "Ragdoll", "Sphynx"]; // Add cat breeds
-    }
-
-    // Add new options to the breed select field
-    breeds.forEach(function(breed) {
-      var option = document.createElement("option");
-      option.text = breed;
-      option.value = breed.toLowerCase().replace(/\s+/g, '_'); // Convert breed name to lowercase and replace spaces with underscores
-      breedSelect.add(option);
-    });
-  
-
-  // Call updateBreeds() initially to set initial breed options
-  updateBreeds();
-
-        
+        Age = [9,100];        
 
     const UserID = await getUserId();
 
