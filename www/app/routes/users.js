@@ -130,7 +130,6 @@ router.patch('/update/:username', (req, res) => {
 // Route to update adopter preferences
 router.post('/updatePreferences', (req, res) => {
     const { UserID, AnimalType, Gender, Breed, Age, ResidentialArea } = req.body;
-    const { UserID, AnimalType, Gender, Breed, Age, ResidentialArea } = req.body;
 
     const updateQuery = `
         INSERT INTO AdopterPreferences (UserID, AnimalType, Gender, Breed, Age, ResidentialArea)
@@ -145,7 +144,6 @@ router.post('/updatePreferences', (req, res) => {
         Age = VALUES(Age),
         ResidentialArea = VALUES(ResidentialArea)`;
 
-    db.query(updateQuery, [UserID, AnimalType, Gender, Breed, JSON.stringify(Age), ResidentialArea], (err, results) => {
     db.query(updateQuery, [UserID, AnimalType, Gender, Breed, JSON.stringify(Age), ResidentialArea], (err, results) => {
         if (err) {
             console.error('Error executing database query:', err);

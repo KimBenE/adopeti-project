@@ -12,7 +12,7 @@ require('./dbInit');
 app.use(express.static(path.join(__dirname, 'uploads')));
 
 // Allow requests from localhost
-const allowedOrigins = ['http://localhost', 'http://adopeti.xyz', 'http://adopeti.xyz'];
+const allowedOrigins = ['http://localhost', 'http://adopeti.xyz'];
 app.use(cors({
     origin: function(origin, callback) {
         if (!origin || allowedOrigins.includes(origin)) {

@@ -14,7 +14,6 @@ const transporter = nodemailer.createTransport({
     auth: {
         user: emailUser,
         pass: emailPass 
-        pass: emailPass 
     }
 });
 
@@ -25,11 +24,6 @@ async function notifyMatchingAdopters(newAnimal) {
     const matchQuery = `
     SELECT UserID
     FROM AdopterPreferences
-    WHERE (AnimalType = ? OR AnimalType IS NULL)
-    AND (JSON_CONTAINS(Breed, JSON_QUOTE(?), '$') OR Breed IS NULL)
-    AND (CAST(JSON_EXTRACT(Age, '$[0]') AS SIGNED) <= ? OR Age IS NULL)
-    AND (CAST(JSON_EXTRACT(Age, '$[1]') AS SIGNED) >= ? OR Age IS NULL)
-    AND (JSON_CONTAINS(ResidentialArea, JSON_QUOTE(?), '$') OR ResidentialArea IS NULL); 
     WHERE (AnimalType = ? OR AnimalType IS NULL)
     AND (JSON_CONTAINS(Breed, JSON_QUOTE(?), '$') OR Breed IS NULL)
     AND (CAST(JSON_EXTRACT(Age, '$[0]') AS SIGNED) <= ? OR Age IS NULL)
@@ -75,7 +69,6 @@ async function getUserById(userId) {
 
 function sendNotificationEmail(email, animal, userId) {
     const emailSubject = 'Adopeti - New match just added!';
-    const emailSubject = 'Adopeti - New match just added!';
 
     // point to the template folder
     const handlebarOptions = {
@@ -92,7 +85,6 @@ function sendNotificationEmail(email, animal, userId) {
 
     transporter.use('compile', hbs(handlebarOptions))
     const firstImage = animal.imagePaths.replace(/[()']/g, '').split(',')[0];
-    const firstImage = animal.imagePaths.replace(/[()']/g, '').split(',')[0];
     // Send the email
     const mailOptions = {
         from: emailUser,
@@ -106,21 +98,6 @@ function sendNotificationEmail(email, animal, userId) {
             fileName: firstImage,
             animalName: animal.name,
             animalAge: animal.age,
-            animalType: animal.animalType,
-            description: animal.description
-          },
-        attachments: [
-            {
-                filename: firstImage,
-                path: `uploads/image/${animal.animalId}/${firstImage}`,
-                cid: 'unique_image_cid', 
-            },
-            {
-                filename: 'LOGO pet-no background.png',
-                path: `assets/נספחים/LOGO Pet-no background.png`,
-                cid: 'logo', 
-            },            
-        ],
             animalType: animal.animalType,
             description: animal.description
           },
