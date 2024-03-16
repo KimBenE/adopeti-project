@@ -1,3 +1,4 @@
+
 document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault(); 
 
@@ -62,5 +63,4 @@ function showError(message) {
     // Display error message to the user
     const errorElement = document.getElementById("error");
     errorElement.textContent = message;
-    errorElement.style.display = "block"; 
-}
+    errorElement.style.display = "block"; }

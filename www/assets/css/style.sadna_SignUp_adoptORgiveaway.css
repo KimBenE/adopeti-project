@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
   font-family: "Karma", sans-serif;
   display: flex;
@@ -101,4 +102,109 @@ button:hover {
 
 main {
   flex: 1; /* Make the main content area grow to fill available space */
+=======
+body {
+  font-family: "Karma", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.w3-bar-block .w3-bar-item {padding:20px}
+
+p{
+  
+  text-align: left;
+  font-weight: bold;
+
+
+}
+
+h1{
+  color: rgb(228, 71, 66);
+  font-family: "Karma";
+  text-align: center;
+}
+
+h2{
+  color: rgb(228, 71, 66);
+  text-align: center;
+  font-family: "Karma";
+  font-size:30px;
+}
+
+.menu{
+  text-align: right;
+  font-size:20px;
+  background-color: rgb(165, 235, 238);
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(228, 71, 66);
+  color: white;
+  bottom: 0; 
+  position: relative;
+  width: 100%;
+}
+
+
+.footer-push {
+flex-grow: 1; /* Push the footer to the bottom */
+}
+
+/***/
+
+Form {
+  width: 100%;
+
+  padding-left: 10%;
+  padding-bottom: 5%;
+  
+
+}
+
+
+.container {
+  width: 500px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #0073b7;
+  color: #fff;
+  border: 1px solid #0073b7;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005a97;
+}
+
+main {
+  flex: 1; /* Make the main content area grow to fill available space */
+>>>>>>> b8f38dfc457d0b495410e9256e3016464bd27b16
 }

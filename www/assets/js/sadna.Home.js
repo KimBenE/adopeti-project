@@ -14,7 +14,7 @@ async function savePreferences() {
     if (animalAge === 'senior')
         Age = [9,100];
 
-    /*A function to insert an animal type according to his choice of the animal type */  
+        
     var breeds = [];
 
     if (AnimalType === "Dog") {
@@ -31,7 +31,10 @@ async function savePreferences() {
       breedSelect.add(option);
     });
   
-    /**/ 
+
+  // Call updateBreeds() initially to set initial breed options
+  updateBreeds();
+
         
 
     const UserID = await getUserId();
@@ -109,4 +112,3 @@ function closePopup(popupContainer) {
 }
 
 /**/
-updateBreeds();

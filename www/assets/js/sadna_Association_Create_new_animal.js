@@ -1,3 +1,4 @@
+
 function ValidateContactForm() {
     var isValid = true;
 

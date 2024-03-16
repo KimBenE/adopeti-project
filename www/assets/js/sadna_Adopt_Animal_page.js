@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", async function() {
     try {
         // Fetch animal data

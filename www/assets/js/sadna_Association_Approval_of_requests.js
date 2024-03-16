@@ -1,3 +1,4 @@
+
 var openInbox = document.getElementById("myBtn");
 openInbox.click();
 

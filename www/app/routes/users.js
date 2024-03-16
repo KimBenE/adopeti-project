@@ -130,17 +130,22 @@ router.patch('/update/:username', (req, res) => {
 // Route to update adopter preferences
 router.post('/updatePreferences', (req, res) => {
     const { UserID, AnimalType, Gender, Breed, Age, ResidentialArea } = req.body;
+    const { UserID, AnimalType, Gender, Breed, Age, ResidentialArea } = req.body;
 
     const updateQuery = `
+        INSERT INTO AdopterPreferences (UserID, AnimalType, Gender, Breed, Age, ResidentialArea)
+        VALUES (?, ?, ?, ?, ?, ?)
         INSERT INTO AdopterPreferences (UserID, AnimalType, Gender, Breed, Age, ResidentialArea)
         VALUES (?, ?, ?, ?, ?, ?)
         ON DUPLICATE KEY UPDATE
         AnimalType = VALUES(AnimalType),
         Gender = VALUES(Gender),
+        Gender = VALUES(Gender),
         Breed = VALUES(Breed),
         Age = VALUES(Age),
         ResidentialArea = VALUES(ResidentialArea)`;
 
+    db.query(updateQuery, [UserID, AnimalType, Gender, Breed, JSON.stringify(Age), ResidentialArea], (err, results) => {
     db.query(updateQuery, [UserID, AnimalType, Gender, Breed, JSON.stringify(Age), ResidentialArea], (err, results) => {
         if (err) {
             console.error('Error executing database query:', err);
@@ -148,6 +153,33 @@ router.post('/updatePreferences', (req, res) => {
         }
 
         return res.status(200).json({ message: 'Adopter preferences updated successfully' });
+    });
+});
+
+router.get('/:username', (req, res) => {
+    const username = req.params.username;
+
+    const query = `
+        SELECT *
+        FROM users
+        WHERE Username = ?;
+    `;
+
+    db.query(query, [username], (err, results) => {
+        if (err) {
+            console.error('Error getting user details:', err);
+            res.status(500).json({ error: 'Internal server error' });
+            return;
+        }
+
+        if (results.length > 0) {
+            // Association details found
+            const user = results[0];
+            res.status(200).json({user});
+        } else {
+            // Association not found
+            res.status(404).json({ error: 'User not found' });
+        }
     });
 });
 

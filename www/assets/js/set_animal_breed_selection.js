@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('animal_type').addEventListener('change', function(event) {
       const selectedAnimal = event.target.value;
@@ -59,4 +60,3 @@ document.addEventListener('DOMContentLoaded', function() {
       selectElement.appendChild(option);
     });
   }
-  

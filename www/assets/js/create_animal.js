@@ -1,3 +1,4 @@
+
 document.getElementById("createAnimalForm").addEventListener("submit", async function(event) {
     event.preventDefault(); 
 
@@ -154,4 +155,4 @@ function getFileNames(files) {
       fileNames.push(files[i].name);
     }
     return fileNames;
-  }
+}
