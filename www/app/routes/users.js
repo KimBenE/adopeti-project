@@ -234,6 +234,37 @@ router.post('/submitForm', async (req, res) => {
 });
 
 
+//function to submit giveaway requests
+router.post('/giveaway-request', (req, res) => {
+    const { UserID,contactdetails,AnimalType, AnimalName, BreedName, AnimalAge, medicalHistorySelection, medicalHistory, reasonsForGivingAway } = req.body;
+  
+    // SQL query to insert the giveaway request
+    const insertQuery = `
+      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason)
+      VALUES  (?,?,?,?,?,?,?,?,?)
+    `;
+  
+    // Execute the query
+    db.query(insertQuery, [UserID,contactdetails,AnimalType, AnimalName, BreedName, AnimalAge, medicalHistorySelection, medicalHistory, reasonsForGivingAway], (err, results) => {
+      if (err) {
+        console.error('Error executing database query:', err);
+        return res.status(500).json({ error: 'Internal server error' });
+      }
+  
+      // Send a success response
+      res.json({
+        message: 'Giveaway request submitted successfully',
+        requestID: results.insertId // Assuming AUTO_INCREMENT is used for RequestID
+      });
+    });
+  });
+  
+
+
+
+
+
+
 // function to validate user credentials
 function isValidCredentials(username, password) {
     return new Promise((resolve, reject) => {

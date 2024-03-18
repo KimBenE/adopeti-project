@@ -9,8 +9,8 @@ const path = require('path');
 const fs = require('fs');
 
 
-router.get('/search', async (req, res) => {
-    const { associationId, animalType, gender, breed, age, residentialArea } = req.body;
+router.post('/search', async (req, res) => {
+    const { animalId, associationId, animalType, gender, breed, age, residentialArea } = req.body;
   
     let query = 'SELECT * FROM animals WHERE 1=1';
     let queryParams = [];
@@ -18,6 +18,11 @@ router.get('/search', async (req, res) => {
     if (associationId) {
       query += ' AND AssociationID = ?';
       queryParams.push(associationId);
+    }
+
+    if (animalId) {
+      query += ' AND AnimalID = ?';
+      queryParams.push(animalId);
     }
   
     if (animalType) {

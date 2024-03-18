@@ -80,6 +80,13 @@
        <footer>
         &copy; AdoPeti
        </footer>
-
+       <script>
+        // Fetch the header HTML and insert it into the placeholder
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+      </script>
       </body>  
        </html>

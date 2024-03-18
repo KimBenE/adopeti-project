@@ -112,5 +112,13 @@
     &copy; AdoPeti
   </footer>
   <script src="../js/register_user.js"></script>
+  <script>
+    // Fetch the header HTML and insert it into the placeholder
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
+  </script>
 </body>
 

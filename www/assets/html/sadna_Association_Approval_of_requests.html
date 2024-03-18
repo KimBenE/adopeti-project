@@ -17,185 +17,126 @@
   </head>
 
 <body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+      <div class="container-fluid">
+        <img class="bigDog" src="../נספחים/LOGO Pet-no background.png" alt="Bootstrap"  width="150" height="100" alt=""> 
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <header>
-            <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
-              <div class="container-fluid">
-                <img class="bigDog" src="../נספחים/LOGO Pet-no background.png" alt="Bootstrap"  width="150" height="100" alt=""> 
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-  
-                      <li class="nav-item">
-                          <a class="nav-link" href="../html/sadna_Home_Association.html" >Home</a>
-                      </li>
-                      <li class="nav-item">
-                          <a  class="nav-link" href="../html/sadna_Dogs_for_adoption.html"> Dogs for adoption</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="../html/sadna_Cats_for_adoption.html"> Cats for adoption</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="../html/sadna_Association_Create_new_animal.html"> Create a new animal</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="../html/sadna_Association_Approval_of_requests.html"> Approval of requests </a>
-                      </li> 
-                      <li class="nav-item">
-                          <a class="nav-link" href="../html/sadna_Association_Survey_statistics.html"> Survey statistics </a>
-                      </li> 
-  
-                    </ul>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
 
-    
-                </div>
-              </div>
-            </nav>
-            <br> <br> <br> <br> <br> <br>  
-          </header>
+              <li class="nav-item">
+                  <a class="nav-link"  href="../html/sadna_Home_Association.html" >Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="../html/sadna_Association_Create_new_animal.html"> Create a new animal</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../html/sadna_Association_Approval_of_requests.html"> Approval of requests </a>
+              </li> 
+              <li class="nav-item">
+                  <a class="nav-link" href="../html/sadna_Association_Survey_statistics.html"> Survey statistics </a>
+              </li> 
+
+            </ul>
+
+
+        </div>
+
+      </div>
+    </nav>
+    <br> <br> <br> <br> <br> <br>  
+  </header>
+
+  <div id="header-placeholder"></div>
 
 
 
         <main>
             <h1> Approval of requests</h1>
 
-            
-              <!-- Side Navigation -->
-              <nav class="w3-sidebar w3-bar-block w3-collapse w3-white w3-animate-left w3-card" style="z-index:3;width:320px;" id="mySidebar">
-                <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom w3-large"><img src="../נספחים/LOGO Pet-no background.png" style="width:60%;"></a>
-                <a href="javascript:void(0)" onclick="w3_close()" title="Close Sidemenu" 
-                class="w3-bar-item w3-button w3-hide-large w3-large">Close <i class="fa fa-remove"></i></a>
-                <a href="javascript:void(0)" class="w3-bar-item w3-button w3-dark-grey w3-button w3-hover-black w3-left-align" onclick="document.getElementById('id01').style.display='block'">New Message <i class="w3-padding fa fa-pencil"></i></a>
-                <a id="myBtn" onclick="myFunc('Demo1')" href="javascript:void(0)" class="w3-bar-item w3-button"><i class="fa fa-inbox w3-margin-right" ></i>Inbox (3)<i class="fa fa-caret-down w3-margin-left"></i></a>
-                <div id="Demo1" class="w3-hide w3-animate-left">
-                  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="openMail('Borge');w3_close();" id="firstTab">
-                    <div class="w3-container">
-
-                      <img class="w3-round w3-margin-right" src="https://static.wixstatic.com/media/2325d2_825d6342d8e947dda1261f6d5ae0e02f~mv2.jpeg/v1/fill/w_443,h_357,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/%D7%A2%D7%9C%D7%9E%D7%94%202.jpeg" style="width:15%;"><span class="w3-opacity w3-large">Borge Refsnes</span>
-                      <h6>Subject: Remember Me</h6>
-                      <p>Hello, i just wanted to let you know that i'll be home at...</p>
-                    </div>
-                  </a>
-                  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="openMail('Jane');w3_close();">
-                    <div class="w3-container">
-                      <img class="w3-round w3-margin-right" src="https://static.wixstatic.com/media/2325d2_b63a71cb1c224780a80f8d222312894b~mv2.jpeg/v1/fill/w_443,h_357,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/%D7%A2%D7%9C%D7%9E%D7%94%202.jpeg" style="width:15%;"><span class="w3-opacity w3-large">Jane Doe</span>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                    </div>
-                  </a>
-                  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="openMail('John');w3_close();">
-                    <div class="w3-container">
-                      <img class="w3-round w3-margin-right" src="https://static.wixstatic.com/media/2325d2_2ac5aa92af3946eaafb25555c87e07ff~mv2.jpeg/v1/fill/w_443,h_357,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/%D7%91%D7%95%D7%91%D7%99%20%D7%97%D7%AA%D7%95%D7%9C.jpeg" style="width:15%;"><span class="w3-opacity w3-large">John Doe</span>
-                      <p>Welcome!</p>
-                    </div>
-                  </a>
-                </div>
-                <a href="#" class="w3-bar-item w3-button"><i class="fa fa-paper-plane w3-margin-right"></i>Sent</a>
-                <a href="#" class="w3-bar-item w3-button"><i class="fa fa-hourglass-end w3-margin-right"></i>Drafts</a>
-                <a href="#" class="w3-bar-item w3-button"><i class="fa fa-trash w3-margin-right"></i>Trash</a>
-              </nav>
-
-              <!-- Modal that pops up when you click on "New Message" -->
-              <div id="id01" class="w3-modal" style="z-index:4">
-                <div class="w3-modal-content w3-animate-zoom">
-                  <div class="w3-container w3-padding w3-red">
-                    <span onclick="document.getElementById('id01').style.display='none'"
-                    class="w3-button w3-red w3-right w3-xxlarge"><i class="fa fa-remove"></i></span>
-                    <h2>Send Mail</h2>
-                  </div>
-                  <div class="w3-panel">
-                    <label>To</label>
-                    <input class="w3-input w3-border w3-margin-bottom" type="text">
-                    <label>From</label>
-                    <input class="w3-input w3-border w3-margin-bottom" type="text">
-                    <label>Subject</label>
-                    <input class="w3-input w3-border w3-margin-bottom" type="text">
-                    <input class="w3-input w3-border w3-margin-bottom" style="height:150px" placeholder="What's on your mind?">
-                    <div class="w3-section">
-                      <a class="w3-button w3-red" onclick="document.getElementById('id01').style.display='none'">Cancel  <i class="fa fa-remove"></i></a>
-                      <a class="w3-button w3-light-grey w3-right" onclick="document.getElementById('id01').style.display='none'">Send  <i class="fa fa-paper-plane"></i></a> 
-                    </div>    
-                  </div>
-                </div>
-              </div>
-
-              <!-- Overlay effect when opening the side navigation on small screens -->
-              <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="Close Sidemenu" id="myOverlay"></div>
 
               <!-- Page content -->
               <div class="w3-main" style="margin-left:320px;">
               <i class="fa fa-bars w3-button w3-white w3-hide-large w3-xlarge w3-margin-left w3-margin-top" onclick="w3_open()"></i>
               <a href="javascript:void(0)" class="w3-hide-large w3-red w3-button w3-right w3-margin-top w3-margin-right" onclick="document.getElementById('id01').style.display='block'"><i class="fa fa-pencil"></i></a>
 
-              <div id="Borge" class="w3-container person">
+              <div id="Jane" class="w3-container person">
                 <br>
-                <img class="w3-round  w3-animate-top" src="https://static.wixstatic.com/media/2325d2_256f597e346d447ab4143de4ab483ac5~mv2.jpg/v1/fill/w_443,h_357,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/%D7%A2%D7%9C%D7%9E%D7%94%202.jpg" style="width:20%;">
-                <h5 class="w3-opacity">dog name:</h5>
+                <img class="w3-round w3-animate-top" src="" style="width:20%;">
+                <h5 class="w3-opacity">Dog name:</h5>
                 <h4><i class="fa fa-clock-o"></i> Application submission date: Sep 27, 2015.</h4>
                 <a class="w3-button w3-light-grey" href="#">Approve<i class="w3-margin-left fa fa-mail-reply"></i></a>
                 <a class="w3-button w3-light-grey" href="#">Deny<i class="w3-margin-left fa fa-arrow-right"></i></a>
                 <hr>
-
-                <p> user name: </p>
-                <p> user last name: </p>
-                <p> city: </p>
-                <p> Email: </p>
-                <p> phone: </p>
-                <p> User request </p> 
+            
+                <!-- User details -->
+                <p id="userName">User name: </p>
+                <p id="userLastName">User last name: </p>
+                <p id="city">City: </p>
+                <p id="email">Email: </p>
+                <p id="phone">Phone: </p>
+                <p id="userRequest">User request: </p>
+                
+                <!-- Button to navigate to request form -->
                 <button class="request-form-button" onclick="navigateToRequestForm()">Go to Request Form</button>
-              </div>
+            </div>
+            
 
               <div class="horizontal-line"> </div>
+
 
               <div id="Jane" class="w3-container person">
                 <br>
-                <img class="w3-round w3-animate-top" src="https://static.wixstatic.com/media/2325d2_ebdd4c316bc549409283c7c6240ee09d~mv2.jpeg/v1/fill/w_443,h_357,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/%D7%A2%D7%9C%D7%9E%D7%94%202.jpeg" style="width:20%;">
-                <h5 class="w3-opacity">dog name:</h5>
+                <img class="w3-round w3-animate-top" src="" style="width:20%;">
+                <h5 class="w3-opacity">Dog name:</h5>
                 <h4><i class="fa fa-clock-o"></i> Application submission date: Sep 27, 2015.</h4>
                 <a class="w3-button w3-light-grey" href="#">Approve<i class="w3-margin-left fa fa-mail-reply"></i></a>
                 <a class="w3-button w3-light-grey" href="#">Deny<i class="w3-margin-left fa fa-arrow-right"></i></a>
                 <hr>
-
-                <p> user name: </p>
-                <p> user last name: </p>
-                <p> city: </p>
-                <p> Email: </p>
-                <p> phone: </p>
-                <p> User request </p> 
+            
+                <!-- User details -->
+                <p id="userName">User name: </p>
+                <p id="userLastName">User last name: </p>
+                <p id="city">City: </p>
+                <p id="email">Email: </p>
+                <p id="phone">Phone: </p>
+                <p id="userRequest">User request: </p>
+                
+                <!-- Button to navigate to request form -->
                 <button class="request-form-button" onclick="navigateToRequestForm()">Go to Request Form</button>
-                
-              </div>
+            </div>
+            
+              
 
               <div class="horizontal-line"> </div>
 
 
-              <div id="John" class="w3-container person">
-                <br>
-                <img class="w3-round w3-animate-top" src="https://static.wixstatic.com/media/2325d2_0ea4d10025b748ffa11e1651b44287c5~mv2.jpg/v1/fill/w_443,h_357,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/%D7%A2%D7%9C%D7%9E%D7%94%202.jpg" style="width:20%;">
-                <h5 class="w3-opacity">dog name:</h5>
-                <h4><i class="fa fa-clock-o"></i> Application submission date: Sep 27, 2015.</h4>
-                <a class="w3-button w3-light-grey" href="#">Approve<i class="w3-margin-left fa fa-mail-reply"></i></a>
-                <a class="w3-button w3-light-grey" href="#">Deny<i class="w3-margin-left fa fa-arrow-right"></i></a>
-                <hr>
-
-                <p> user name: </p>
-                <p> user last name: </p>
-                <p> city: </p>
-                <p> Email: </p>
-                <p> phone: </p>
-                <p> User request </p> 
-                <button class="request-form-button" onclick="navigateToRequestForm()">Go to Request Form</button>   
-                
+              <div id="Jane" class="w3-container person">
+                  <br>
+                  <img class="w3-round w3-animate-top" src="" style="width:20%;">
+                  <h5 class="w3-opacity">Dog name:</h5>
+                  <h4><i class="fa fa-clock-o"></i> Application submission date: Sep 27, 2015.</h4>
+                  <a class="w3-button w3-light-grey" href="#">Approve<i class="w3-margin-left fa fa-mail-reply"></i></a>
+                  <a class="w3-button w3-light-grey" href="#">Deny<i class="w3-margin-left fa fa-arrow-right"></i></a>
+                  <hr>
+              
+                  <!-- User details -->
+                  <p id="userName">User name: </p>
+                  <p id="userLastName">User last name: </p>
+                  <p id="city">City: </p>
+                  <p id="email">Email: </p>
+                  <p id="phone">Phone: </p>
+                  <p id="userRequest">User request: </p>
+                  
+                  <!-- Button to navigate to request form -->
+                  <button class="request-form-button" onclick="navigateToRequestForm()">Go to Request Form</button>
               </div>
-
-              <div class="horizontal-line"> </div>
-
-              <br> <br>
-              </div>    
-
-
+              
 
 
         </main>
@@ -203,6 +144,18 @@
       <footer>
         &copy; AdoPeti
       </footer>
+      <script src="../js/animal_gallery.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="../js/open_profile.js"></script>
+
+      <script>
+        // Fetch the header HTML and insert it into the placeholder
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+      </script>
       
       </body>      
       </html>

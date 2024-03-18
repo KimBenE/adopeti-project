@@ -17,48 +17,14 @@
 
 <body>
 
-        <header>
-            <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
-              <div class="container-fluid">
-                <img class="bigDog" src="../נספחים/LOGO Pet-no background.png" alt="Bootstrap"  width="150" height="100" alt=""> 
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-
-
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                  <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link"  href="../html/sadna_Home.html" >Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a  class="nav-link" href="../html/sadna_Dogs_for_adoption.html"> Dogs for adoption</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../html/sadna_Cats_for_adoption.html"> Cats for adoption</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../html/sadna_RequestGiveaway.html"> Give away animal </a>
-                    </li> 
-                    <li class="nav-item">
-                        <a class="nav-link" href="../html/sadna_Contact.html"> Contact </a>
-                    </li> 
-                  </ul>
-      
-
-                </div>
-              </div>
-            </nav>
-            <br> <br> <br> <br> <br> <br>  
-          </header>
+  <div id="header-placeholder"></div>
 
 
           <main>
                     
             <h2>Animal GIVING AWAY form </h2> <br> 
         
-       <form id="Form" method="post"  name="Form" onsubmit="return ValidateContactForm();" >
+       <form id="GiveAwayForm" method="post"  name="Form" onsubmit="return ValidateContactForm();" >
                 
             <div class="mb-3 " id="left">
               <div>
@@ -83,11 +49,6 @@
             <p> <label for="InputAge "class="form-label"> What is the age of the animal? </label>
                 <input type="text" id="DogAge" name="DogAge" Placeholder="0-30" required>  
            <br><br>
-                <section id="left">
-                  <label for="image"><p>Upload photos and videos of the animal for give away</p></label>
-                  <input type="file" id="image" name="image[]" multiple accept="image/jpeg,image/gif,image/png">
-                <button type="submit">Upload files</button>
-            
          
             </div>
                  
@@ -125,7 +86,7 @@
 
 
 
-                <div class="checkbox-group" id="right">
+                <div class="checkbox-group" id="reasons">
                     <div class="form-check" >
                       <p>What is the reason for giving away the animal?</p>
 
@@ -175,5 +136,13 @@
         <footer>
           &copy; AdoPeti
         </footer>
-        
+        <script>
+          // Fetch the header HTML and insert it into the placeholder
+          fetch('header.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('header-placeholder').innerHTML = data;
+              });
+        </script>
+        <script src="../js/sdna.RequestGiveAwayListener.js"></script>
       </body>

@@ -79,14 +79,18 @@ const createTables = [
     `CREATE TABLE IF NOT EXISTS GiveUpRequests (
         RequestID INT AUTO_INCREMENT PRIMARY KEY,
         UserID INT,
-        AssociationID INT,
         ApprovalStatus ENUM('pending', 'approved', 'denied') NOT NULL DEFAULT 'pending',
-        RequestText TEXT,
         ContactInformation TEXT,
+        AnimalType VARCHAR(255),
+        AnimalName VARCHAR(255),
+        BreedName VARCHAR(255),
+        AnimalAge INT,
+        HasMedicalProblems ENUM('yes', 'no'),
+        MedicalIssuesDetails TEXT,
+        GiveUpReason TEXT,
         CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (UserID) REFERENCES Users(UserID),
-        FOREIGN KEY (AssociationID) REFERENCES Associations(AssociationID)
-    );`,
+        FOREIGN KEY (UserID) REFERENCES Users(UserID)
+      );`,
     `CREATE TABLE IF NOT EXISTS UsersNotifications (
         NotificationID INT AUTO_INCREMENT PRIMARY KEY,
         UserID INT,

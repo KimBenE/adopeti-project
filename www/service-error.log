@@ -26668,3 +26668,1225 @@ SyntaxError: Unexpected identifier 'pass'
     at Module._compile (node:internal/modules/cjs/loader:1376:14)
 
 Node.js v20.11.1
+Error executing database query: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO AdopterPreferences (UserID, AnimalType, Gender, Breed, Age, Resident' at line 3
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\app\routes\users.js:147:8
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:280:10) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO AdopterPreferences (UserID, AnimalType, Gender, Breed, Age, Resident' at line 3",
+  sqlState: '42000',
+  index: 0,
+  sql: '\n' +
+    '        INSERT INTO AdopterPreferences (UserID, AnimalType, Gender, Breed, Age, ResidentialArea)\n' +
+    "        VALUES (4, 'dog', NULL, NULL, 'null', 'center')\n" +
+    '        INSERT INTO AdopterPreferences (UserID, AnimalType, Gender, Breed, Age, ResidentialArea)\n' +
+    '        VALUES (?, ?, ?, ?, ?, ?)\n' +
+    '        ON DUPLICATE KEY UPDATE\n' +
+    '        AnimalType = VALUES(AnimalType),\n' +
+    '        Gender = VALUES(Gender),\n' +
+    '        Gender = VALUES(Gender),\n' +
+    '        Breed = VALUES(Breed),\n' +
+    '        Age = VALUES(Age),\n' +
+    '        ResidentialArea = VALUES(ResidentialArea)'
+}
+SyntaxError: "[object Object]" is not valid JSON
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\body-parser\lib\types\json.js:92:19)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at invokeCallback (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:518:28)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+SyntaxError: "[object Object]" is not valid JSON
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\body-parser\lib\types\json.js:92:19)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at invokeCallback (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:518:28)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+node:events:496
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Packets out of order. Got: 0 Expected: 55
+    at Parser._tryReadPacketHeader (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:470:15)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:33:29)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (node:events:518:28)
+    at Protocol._delegateError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.handleParserError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:380:10)
+    at Parser._tryReadPacketHeader (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:478:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:33:29)
+    [... lines matching original stack trace ...]
+    at Socket.emit (node:events:518:28) {
+  code: 'PROTOCOL_PACKETS_OUT_OF_ORDER',
+  fatal: true
+}
+
+Node.js v20.11.1
+node:events:496
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Packets out of order. Got: 0 Expected: 2
+    at Parser._tryReadPacketHeader (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:470:15)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:33:29)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (node:events:518:28)
+    at Protocol._delegateError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.handleParserError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:380:10)
+    at Parser._tryReadPacketHeader (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:478:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:33:29)
+    [... lines matching original stack trace ...]
+    at Socket.emit (node:events:518:28) {
+  code: 'PROTOCOL_PACKETS_OUT_OF_ORDER',
+  fatal: true
+}
+
+Node.js v20.11.1
+node:events:496
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Packets out of order. Got: 0 Expected: 2
+    at Parser._tryReadPacketHeader (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:470:15)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:33:29)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (node:events:518:28)
+    at Protocol._delegateError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.handleParserError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:380:10)
+    at Parser._tryReadPacketHeader (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:478:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:33:29)
+    [... lines matching original stack trace ...]
+    at Socket.emit (node:events:518:28) {
+  code: 'PROTOCOL_PACKETS_OUT_OF_ORDER',
+  fatal: true
+}
+
+Node.js v20.11.1
+C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:106:8
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:105:14)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16",
+  sqlState: '42000',
+  index: 0,
+  sql: 'CREATE TABLE IF NOT EXISTS GiveUpRequests (\n' +
+    '        RequestID INT AUTO_INCREMENT PRIMARY KEY,\n' +
+    '        UserID INT,\n' +
+    "        ApprovalStatus ENUM('pending', 'approved', 'denied') NOT NULL DEFAULT 'pending',\n" +
+    '        RequestText TEXT,\n' +
+    '        ContactInformation TEXT,\n' +
+    '        AnimalType VARCHAR(255),\n' +
+    '        AnimalName VARCHAR(255),\n' +
+    '        BreedName VARCHAR(255),\n' +
+    '        AnimalAge INT,\n' +
+    "        HasMedicalProblems ENUM('yes', 'no'),\n" +
+    '        MedicalIssuesDetails TEXT,\n' +
+    '        GiveUpReason TEXT, -- Stores reasons for giving up the animal, potentially comma-separated\n' +
+    '        CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n' +
+    '        FOREIGN KEY (UserID) REFERENCES Users(UserID),\n' +
+    '    );'
+}
+
+Node.js v20.11.1
+C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:106:8
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:105:14)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16",
+  sqlState: '42000',
+  index: 0,
+  sql: 'CREATE TABLE IF NOT EXISTS GiveUpRequests (\n' +
+    '        RequestID INT AUTO_INCREMENT PRIMARY KEY,\n' +
+    '        UserID INT,\n' +
+    "        ApprovalStatus ENUM('pending', 'approved', 'denied') NOT NULL DEFAULT 'pending',\n" +
+    '        RequestText TEXT,\n' +
+    '        ContactInformation TEXT,\n' +
+    '        AnimalType VARCHAR(255),\n' +
+    '        AnimalName VARCHAR(255),\n' +
+    '        BreedName VARCHAR(255),\n' +
+    '        AnimalAge INT,\n' +
+    "        HasMedicalProblems ENUM('yes', 'no'),\n" +
+    '        MedicalIssuesDetails TEXT,\n' +
+    '        GiveUpReason TEXT, -- Stores reasons for giving up the animal, potentially comma-separated\n' +
+    '        CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n' +
+    '        FOREIGN KEY (UserID) REFERENCES Users(UserID),\n' +
+    '    );'
+}
+
+Node.js v20.11.1
+C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:106:8
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:105:14)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16",
+  sqlState: '42000',
+  index: 0,
+  sql: 'CREATE TABLE IF NOT EXISTS GiveUpRequests (\n' +
+    '        RequestID INT AUTO_INCREMENT PRIMARY KEY,\n' +
+    '        UserID INT,\n' +
+    "        ApprovalStatus ENUM('pending', 'approved', 'denied') NOT NULL DEFAULT 'pending',\n" +
+    '        RequestText TEXT,\n' +
+    '        ContactInformation TEXT,\n' +
+    '        AnimalType VARCHAR(255),\n' +
+    '        AnimalName VARCHAR(255),\n' +
+    '        BreedName VARCHAR(255),\n' +
+    '        AnimalAge INT,\n' +
+    "        HasMedicalProblems ENUM('yes', 'no'),\n" +
+    '        MedicalIssuesDetails TEXT,\n' +
+    '        GiveUpReason TEXT, -- Stores reasons for giving up the animal, potentially comma-separated\n' +
+    '        CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n' +
+    '        FOREIGN KEY (UserID) REFERENCES Users(UserID),\n' +
+    '    );'
+}
+
+Node.js v20.11.1
+C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:106:8
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:105:14)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16",
+  sqlState: '42000',
+  index: 0,
+  sql: 'CREATE TABLE IF NOT EXISTS GiveUpRequests (\n' +
+    '        RequestID INT AUTO_INCREMENT PRIMARY KEY,\n' +
+    '        UserID INT,\n' +
+    "        ApprovalStatus ENUM('pending', 'approved', 'denied') NOT NULL DEFAULT 'pending',\n" +
+    '        RequestText TEXT,\n' +
+    '        ContactInformation TEXT,\n' +
+    '        AnimalType VARCHAR(255),\n' +
+    '        AnimalName VARCHAR(255),\n' +
+    '        BreedName VARCHAR(255),\n' +
+    '        AnimalAge INT,\n' +
+    "        HasMedicalProblems ENUM('yes', 'no'),\n" +
+    '        MedicalIssuesDetails TEXT,\n' +
+    '        GiveUpReason TEXT, -- Stores reasons for giving up the animal, potentially comma-separated\n' +
+    '        CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n' +
+    '        FOREIGN KEY (UserID) REFERENCES Users(UserID),\n' +
+    '    );'
+}
+
+Node.js v20.11.1
+C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:106:8
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:105:14)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16",
+  sqlState: '42000',
+  index: 0,
+  sql: 'CREATE TABLE IF NOT EXISTS GiveUpRequests (\n' +
+    '        RequestID INT AUTO_INCREMENT PRIMARY KEY,\n' +
+    '        UserID INT,\n' +
+    "        ApprovalStatus ENUM('pending', 'approved', 'denied') NOT NULL DEFAULT 'pending',\n" +
+    '        RequestText TEXT,\n' +
+    '        ContactInformation TEXT,\n' +
+    '        AnimalType VARCHAR(255),\n' +
+    '        AnimalName VARCHAR(255),\n' +
+    '        BreedName VARCHAR(255),\n' +
+    '        AnimalAge INT,\n' +
+    "        HasMedicalProblems ENUM('yes', 'no'),\n" +
+    '        MedicalIssuesDetails TEXT,\n' +
+    '        GiveUpReason TEXT, -- Stores reasons for giving up the animal, potentially comma-separated\n' +
+    '        CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n' +
+    '        FOREIGN KEY (UserID) REFERENCES Users(UserID),\n' +
+    '    );'
+}
+
+Node.js v20.11.1
+C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:106:8
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:105:14)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16",
+  sqlState: '42000',
+  index: 0,
+  sql: 'CREATE TABLE IF NOT EXISTS GiveUpRequests (\n' +
+    '        RequestID INT AUTO_INCREMENT PRIMARY KEY,\n' +
+    '        UserID INT,\n' +
+    "        ApprovalStatus ENUM('pending', 'approved', 'denied') NOT NULL DEFAULT 'pending',\n" +
+    '        RequestText TEXT,\n' +
+    '        ContactInformation TEXT,\n' +
+    '        AnimalType VARCHAR(255),\n' +
+    '        AnimalName VARCHAR(255),\n' +
+    '        BreedName VARCHAR(255),\n' +
+    '        AnimalAge INT,\n' +
+    "        HasMedicalProblems ENUM('yes', 'no'),\n" +
+    '        MedicalIssuesDetails TEXT,\n' +
+    '        GiveUpReason TEXT, -- Stores reasons for giving up the animal, potentially comma-separated\n' +
+    '        CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n' +
+    '        FOREIGN KEY (UserID) REFERENCES Users(UserID),\n' +
+    '    );'
+}
+
+Node.js v20.11.1
+C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:106:8
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:105:14)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16",
+  sqlState: '42000',
+  index: 0,
+  sql: 'CREATE TABLE IF NOT EXISTS GiveUpRequests (\n' +
+    '        RequestID INT AUTO_INCREMENT PRIMARY KEY,\n' +
+    '        UserID INT,\n' +
+    "        ApprovalStatus ENUM('pending', 'approved', 'denied') NOT NULL DEFAULT 'pending',\n" +
+    '        RequestText TEXT,\n' +
+    '        ContactInformation TEXT,\n' +
+    '        AnimalType VARCHAR(255),\n' +
+    '        AnimalName VARCHAR(255),\n' +
+    '        BreedName VARCHAR(255),\n' +
+    '        AnimalAge INT,\n' +
+    "        HasMedicalProblems ENUM('yes', 'no'),\n" +
+    '        MedicalIssuesDetails TEXT,\n' +
+    '        GiveUpReason TEXT, -- Stores reasons for giving up the animal, potentially comma-separated\n' +
+    '        CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n' +
+    '        FOREIGN KEY (UserID) REFERENCES Users(UserID),\n' +
+    '    );'
+}
+
+Node.js v20.11.1
+C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:106:8
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:105:14)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16",
+  sqlState: '42000',
+  index: 0,
+  sql: 'CREATE TABLE IF NOT EXISTS GiveUpRequests (\n' +
+    '        RequestID INT AUTO_INCREMENT PRIMARY KEY,\n' +
+    '        UserID INT,\n' +
+    "        ApprovalStatus ENUM('pending', 'approved', 'denied') NOT NULL DEFAULT 'pending',\n" +
+    '        RequestText TEXT,\n' +
+    '        ContactInformation TEXT,\n' +
+    '        AnimalType VARCHAR(255),\n' +
+    '        AnimalName VARCHAR(255),\n' +
+    '        BreedName VARCHAR(255),\n' +
+    '        AnimalAge INT,\n' +
+    "        HasMedicalProblems ENUM('yes', 'no'),\n" +
+    '        MedicalIssuesDetails TEXT,\n' +
+    '        GiveUpReason TEXT, -- Stores reasons for giving up the animal, potentially comma-separated\n' +
+    '        CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n' +
+    '        FOREIGN KEY (UserID) REFERENCES Users(UserID),\n' +
+    '    );'
+}
+
+Node.js v20.11.1
+C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:106:8
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:105:14)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16",
+  sqlState: '42000',
+  index: 0,
+  sql: 'CREATE TABLE IF NOT EXISTS GiveUpRequests (\n' +
+    '        RequestID INT AUTO_INCREMENT PRIMARY KEY,\n' +
+    '        UserID INT,\n' +
+    "        ApprovalStatus ENUM('pending', 'approved', 'denied') NOT NULL DEFAULT 'pending',\n" +
+    '        RequestText TEXT,\n' +
+    '        ContactInformation TEXT,\n' +
+    '        AnimalType VARCHAR(255),\n' +
+    '        AnimalName VARCHAR(255),\n' +
+    '        BreedName VARCHAR(255),\n' +
+    '        AnimalAge INT,\n' +
+    "        HasMedicalProblems ENUM('yes', 'no'),\n" +
+    '        MedicalIssuesDetails TEXT,\n' +
+    '        GiveUpReason TEXT, -- Stores reasons for giving up the animal, potentially comma-separated\n' +
+    '        CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n' +
+    '        FOREIGN KEY (UserID) REFERENCES Users(UserID),\n' +
+    '    );'
+}
+
+Node.js v20.11.1
+C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:437
+      throw err; // Rethrow non-MySQL errors
+      ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:106:8
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\dbInit.js:105:14)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 16",
+  sqlState: '42000',
+  index: 0,
+  sql: 'CREATE TABLE IF NOT EXISTS GiveUpRequests (\n' +
+    '        RequestID INT AUTO_INCREMENT PRIMARY KEY,\n' +
+    '        UserID INT,\n' +
+    "        ApprovalStatus ENUM('pending', 'approved', 'denied') NOT NULL DEFAULT 'pending',\n" +
+    '        RequestText TEXT,\n' +
+    '        ContactInformation TEXT,\n' +
+    '        AnimalType VARCHAR(255),\n' +
+    '        AnimalName VARCHAR(255),\n' +
+    '        BreedName VARCHAR(255),\n' +
+    '        AnimalAge INT,\n' +
+    "        HasMedicalProblems ENUM('yes', 'no'),\n" +
+    '        MedicalIssuesDetails TEXT,\n' +
+    '        GiveUpReason TEXT, -- Stores reasons for giving up the animal, potentially comma-separated\n' +
+    '        CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n' +
+    '        FOREIGN KEY (UserID) REFERENCES Users(UserID),\n' +
+    '    );'
+}
+
+Node.js v20.11.1
+Error executing database query: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',?,?)' at line 2
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\app\routes\users.js:248:8
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:280:10) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',?,?)' at line 2",
+  sqlState: '42000',
+  index: 0,
+  sql: '\n' +
+    '      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason, RequestText, ContactInformation)\n' +
+    "      VALUES (NULL, NULL, 'dog', 'asd','asd','2','on',NULL,,?,?)\n" +
+    '    '
+}
+Error executing database query: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',?,?)' at line 2
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\app\routes\users.js:248:8
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:280:10) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',?,?)' at line 2",
+  sqlState: '42000',
+  index: 0,
+  sql: '\n' +
+    '      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason, RequestText, ContactInformation)\n' +
+    "      VALUES (NULL, NULL, 'dog', 'asd','asd','2','on',NULL,,?,?)\n" +
+    '    '
+}
+Error executing database query: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\app\routes\users.js:248:8
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:280:10) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2",
+  sqlState: '42000',
+  index: 0,
+  sql: '\n' +
+    '      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason, RequestText, ContactInformation)\n' +
+    "      VALUES  (NULL,NULL,'dog','asd','asdasdd','1','on',NULL,)\n" +
+    '    '
+}
+Error executing database query: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\app\routes\users.js:248:8
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:280:10) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2",
+  sqlState: '42000',
+  index: 0,
+  sql: '\n' +
+    '      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason, RequestText, ContactInformation)\n' +
+    "      VALUES  (NULL,NULL,'dog','asd','asdasdd','1','on',NULL,)\n" +
+    '    '
+}
+Error executing database query: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\app\routes\users.js:248:8
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:280:10) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2",
+  sqlState: '42000',
+  index: 0,
+  sql: '\n' +
+    '      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason, RequestText, ContactInformation)\n' +
+    "      VALUES  (NULL,NULL,'dog','asd','asdasdd','3','on',NULL,)\n" +
+    '    '
+}
+Error executing database query: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\app\routes\users.js:248:8
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:280:10) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2",
+  sqlState: '42000',
+  index: 0,
+  sql: '\n' +
+    '      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason, RequestText, ContactInformation)\n' +
+    "      VALUES  (4,'kibenelisha47@gmail.com0582635773',NULL,'asdasdasda','asdasdasd','1','on',NULL,)\n" +
+    '    '
+}
+Error executing database query: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\app\routes\users.js:248:8
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:280:10) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2",
+  sqlState: '42000',
+  index: 0,
+  sql: '\n' +
+    '      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason, RequestText, ContactInformation)\n' +
+    "      VALUES  (4,'kibenelisha47@gmail.com0582635773',NULL,'asdasdasda','asdasdasd','1','on',NULL,)\n" +
+    '    '
+}
+Error executing database query: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\app\routes\users.js:248:8
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:280:10) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2",
+  sqlState: '42000',
+  index: 0,
+  sql: '\n' +
+    '      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason, RequestText, ContactInformation)\n' +
+    "      VALUES  (4,'kibenelisha47@gmail.com0582635773','dog','asdasdasda','asdasdasd','1','on',NULL,)\n" +
+    '    '
+}
+Error executing database query: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ','NULL')' at line 2
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\app\routes\users.js:248:8
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:280:10) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ','NULL')' at line 2",
+  sqlState: '42000',
+  index: 0,
+  sql: '\n' +
+    '      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason, RequestText)\n' +
+    "      VALUES  (4,'kibenelisha47@gmail.com0582635773','dog','asd','asdasd','2','on',NULL,,'NULL')\n" +
+    '    '
+}
+Error executing database query: Error: WARN_DATA_TRUNCATED: Data truncated for column 'HasMedicalProblems' at row 1
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\app\routes\users.js:248:8
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:280:10) {
+  code: 'WARN_DATA_TRUNCATED',
+  errno: 1265,
+  sqlMessage: "Data truncated for column 'HasMedicalProblems' at row 1",
+  sqlState: '01000',
+  index: 0,
+  sql: '\n' +
+    '      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason, RequestText)\n' +
+    "      VALUES  (4,'kibenelisha47@gmail.com0582635773','dog','asdasd','asdasd','1','on',NULL,'kaki shel kelev','NULL')\n" +
+    '    '
+}
+Error executing database query: Error: WARN_DATA_TRUNCATED: Data truncated for column 'HasMedicalProblems' at row 1
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\app\routes\users.js:248:8
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:280:10) {
+  code: 'WARN_DATA_TRUNCATED',
+  errno: 1265,
+  sqlMessage: "Data truncated for column 'HasMedicalProblems' at row 1",
+  sqlState: '01000',
+  index: 0,
+  sql: '\n' +
+    '      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason, RequestText)\n' +
+    "      VALUES  (4,'kibenelisha47@gmail.com0582635773','dog','asdasd','asdasd','1','on',NULL,'kaki shel kelev','NULL')\n" +
+    '    '
+}
+Error executing database query: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ','NULL')' at line 2
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\app\routes\users.js:248:8
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:280:10) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ','NULL')' at line 2",
+  sqlState: '42000',
+  index: 0,
+  sql: '\n' +
+    '      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason, RequestText)\n' +
+    "      VALUES  (4,'kibenelisha47@gmail.com0582635773','dog','asd','asdasd','4','yes','fafafa',,'NULL')\n" +
+    '    '
+}
+Error executing database query: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ','NULL')' at line 2
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\app\routes\users.js:248:8
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:280:10) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ','NULL')' at line 2",
+  sqlState: '42000',
+  index: 0,
+  sql: '\n' +
+    '      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason, RequestText)\n' +
+    "      VALUES  (4,'kibenelisha47@gmail.com0582635773','dog','asd','asdasd','4','yes','fafafa',,'NULL')\n" +
+    '    '
+}
+Error executing database query: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ','NULL')' at line 2
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\app\routes\users.js:248:8
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:280:10) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ','NULL')' at line 2",
+  sqlState: '42000',
+  index: 0,
+  sql: '\n' +
+    '      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason, RequestText)\n' +
+    "      VALUES  (4,'kibenelisha47@gmail.com0582635773','dog','asd','asdasd','4','yes','fafafa',,'NULL')\n" +
+    '    '
+}
+Error executing database query: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ','NULL')' at line 2
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\app\routes\users.js:248:8
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:280:10) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ','NULL')' at line 2",
+  sqlState: '42000',
+  index: 0,
+  sql: '\n' +
+    '      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason, RequestText)\n' +
+    "      VALUES  (4,'kibenelisha47@gmail.com0582635773','dog','asd','asdasd','4','yes','fafafa',,'NULL')\n" +
+    '    '
+}
+Error executing database query: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ','NULL')' at line 2
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\app\routes\users.js:248:8
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:280:10) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ','NULL')' at line 2",
+  sqlState: '42000',
+  index: 0,
+  sql: '\n' +
+    '      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason, RequestText)\n' +
+    "      VALUES  (4,'kibenelisha47@gmail.com0582635773','dog','asd','asdasd','4','yes','fafafa',,'NULL')\n" +
+    '    '
+}
+Error executing database query: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?)' at line 2
+    at Sequence._packetToError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\app\routes\users.js:248:8
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\express\lib\router\index.js:280:10) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?)' at line 2",
+  sqlState: '42000',
+  index: 0,
+  sql: '\n' +
+    '      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason)\n' +
+    "      VALUES  (4,'kibenelisha47@gmail.com 0582635773','dog','asdasd','asdasdasd','3','no',NULL,NULL,?)\n" +
+    '    '
+}
+node:events:496
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Packets out of order. Got: 0 Expected: 5
+    at Parser._tryReadPacketHeader (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:470:15)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:33:29)
+    at Protocol.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)
+Emitted 'error' event on Connection instance at:
+    at Connection._handleProtocolError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\Connection.js:423:8)
+    at Protocol.emit (node:events:518:28)
+    at Protocol._delegateError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:398:10)
+    at Protocol.handleParserError (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Protocol.js:380:10)
+    at Parser._tryReadPacketHeader (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:478:10)
+    at Parser.write (C:\Users\kimbn\Desktop\adopeti-project\www\node_modules\mysql\lib\protocol\Parser.js:33:29)
+    [... lines matching original stack trace ...]
+    at Socket.emit (node:events:518:28) {
+  code: 'PROTOCOL_PACKETS_OUT_OF_ORDER',
+  fatal: true
+}
+
+Node.js v20.11.1

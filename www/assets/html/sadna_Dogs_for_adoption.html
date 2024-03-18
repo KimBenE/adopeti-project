@@ -14,47 +14,46 @@
   </head>
 
 <body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+      <div class="container-fluid">
+        <img class="bigDog" src="../נספחים/LOGO Pet-no background.png" alt="Bootstrap"  width="150" height="100" alt=""> 
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <header>
-            <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
-              <div class="container-fluid">
-                <img class="bigDog" src="../נספחים/LOGO Pet-no background.png" alt="Bootstrap"  width="150" height="100" alt=""> 
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                  <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link"  href="../html/sadna_Home.html" >Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a  class="nav-link active" aria-current="page" href="../html/sadna_Dogs_for_adoption.html"> Dogs for adoption</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../html/sadna_Cats_for_adoption.html"> Cats for adoption</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../html/sadna_RequestGiveaway.html"> Give away animal </a>
-                    </li> 
-                    <li class="nav-item">
-                        <a class="nav-link" href="../html/sadna_Contact.html"> Contact </a>
-                    </li> 
-                  </ul>
-
-      
-
-                </div>
-              </div>
-            </nav>
-            <br> <br> <br> <br> <br> <br>  
-          </header>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+                <a class="nav-link"  href="../html/sadna_Home.html" >Home</a>
+            </li>
+            <li class="nav-item">
+                <a  class="nav-link active" aria-current="page" href="../html/sadna_Dogs_for_adoption.html"> Dogs for adoption</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../html/sadna_Cats_for_adoption.html"> Cats for adoption</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../html/sadna_RequestGiveaway.html"> Give away animal </a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="../html/sadna_Contact.html"> Contact </a>
+            </li> 
+          </ul>
 
 
 
-        <main>
-            <h1> Our Dogs</h1><br>
+        </div>
+      </div>
+    </nav>
+    <br> <br> <br> <br> <br> <br>  
+  </header>
+  
+  <div id="header-placeholder"></div>
+
+  <main>
+            <h1> Our Animals</h1><br>
             <p> These are the animals that need a warm and loving home <br>
                 For each animal, the personal details of the animal are detailed, including animal type, breed, age, photos and videos about the animal and more. <br>
                 You can go through any available animal and if you want to submit an application for adoption, click on the animal page of your choice and send an application, we will try to get back to you as soon as possible!</p>
@@ -77,69 +76,33 @@
                 <div class="w3-center w3-padding-16">My Food</div>
               </div>
             </div>
+
+          <!--Search Filter inputs -->
+          <div id="search_filters">
+            <label for="animalType">Animal Type:</label>
+            <select id="animalType">
+                <option value="">All</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+            </select>
+          </div>
+
+          <div id="gallery">
+          </div>
+          <!-- HTML Structure for the floating window (modal) -->
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <div id="animal-images">
+                <!-- Animal images will be dynamically added here -->
+              </div>
+              <div id="animal-info">
+                <!-- Animal information will be dynamically added here -->
+              </div>
+              <button id="adopt-btn">I want to adopt</button>
+            </div>
+          </div>
               
-            <!-- !PAGE CONTENT! -->
-            <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
-            
-              <!-- First Photo Grid-->
-              <div class="w3-row-padding w3-padding-16 w3-center" id="dog">
-                <div class="w3-quarter">
-                  <img src="https://static.wixstatic.com/media/2325d2_91602fd385ac4ad0b91d584562eb95ed~mv2.jpg/v1/fill/w_443,h_357,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/%D7%A2%D7%9C%D7%9E%D7%94%202.jpg" alt="Sandwich" style="width:100%">
-                  <h3>miky</h3>
-                  <p></p>
-                </div>
-                <div class="w3-quarter">
-                  <img src="https://static.wixstatic.com/media/2325d2_25effd2d64b748ca9e2b92d1946e7d8b~mv2.jpg/v1/fill/w_443,h_357,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/%D7%A2%D7%9C%D7%9E%D7%94%202.jpg" alt="Steak" style="width:100%">
-                  <h3>alex</h3>
-                  <p></p>
-                </div>
-                <div class="w3-quarter">
-                  <img src="https://static.wixstatic.com/media/2325d2_f09c327602e54d8d9717267090e4e44b~mv2.jpg/v1/fill/w_443,h_357,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/%D7%A2%D7%9C%D7%9E%D7%94%202.jpg" alt="Cherries" style="width:100%">
-                  <h3>bony</h3>
-                  <p></p>
-                </div>
-                <div class="w3-quarter">
-                  <img src="https://static.wixstatic.com/media/2325d2_6c7dbd66ab7a472ca9f146f496ba127a~mv2.jpg/v1/fill/w_443,h_357,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/%D7%A2%D7%9C%D7%9E%D7%94%202.jpg" alt="Pasta and Wine" style="width:100%">
-                  <h3>jena</h3>
-                  <p></p>
-                </div>
-              </div>
-              
-              <!-- Second Photo Grid-->
-              <div class="w3-row-padding w3-padding-16 w3-center">
-                <div class="w3-quarter">
-                  <img src="https://static.wixstatic.com/media/2325d2_51ca431e7fa94ad6ad4934191dbbda3b~mv2.jpeg/v1/fill/w_443,h_357,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/%D7%A2%D7%9C%D7%9E%D7%94%202.jpeg" alt="Popsicle" style="width:100%">
-                  <h3>ronna</h3>
-                  <p></p>
-                </div>
-                <div class="w3-quarter">
-                  <img src="https://static.wixstatic.com/media/2325d2_54751f7acddf4951a379eb4329bae2e2~mv2.jpeg/v1/fill/w_443,h_357,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/%D7%A2%D7%9C%D7%9E%D7%94%202.jpeg" alt="Salmon" style="width:100%">
-                  <h3>zoey</h3>
-                  <p></p>
-                </div>
-                <div class="w3-quarter">
-                  <img src="https://static.wixstatic.com/media/2325d2_7bd55221b6664635a382c7aaa157b73b~mv2.jpeg/v1/fill/w_443,h_357,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/%D7%A2%D7%9C%D7%9E%D7%94%202.jpeg" alt="Sandwich" style="width:100%">
-                  <h3>rexy</h3>
-                  <p></p>
-                </div>
-                <div class="w3-quarter">
-                  <img src="https://static.wixstatic.com/media/2325d2_187f6c06ff184a1fb885d49dc295bf43~mv2.jpg/v1/fill/w_443,h_357,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/%D7%A2%D7%9C%D7%9E%D7%94%202.jpg" alt="Croissant" style="width:100%">
-                  <h3>Frenchi</h3>
-                  <p></p>
-                </div>
-              </div>
-            
-              <!-- Pagination -->
-              <div class="w3-center w3-padding-32">
-                <div class="w3-bar">
-                  <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-                  <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-                  <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-                  <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-                  <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-                  <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-                </div>
-              </div>
             </main>
               <!-- Footer -->
               <footer>
@@ -159,7 +122,14 @@
               document.getElementById("mySidebar").style.display = "none";
             }
             </script>
-            
+            <script src="../js/animal_gallery.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $('#header-placeholder').load('header.html');
+                });
+            </script>
+            <script src="../js/open_profile.js"></script>
             </body>
             </html>
             
