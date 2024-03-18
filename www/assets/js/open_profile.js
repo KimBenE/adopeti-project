@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const base_url = "http://adopeti.xyz:3000/animals/search";
     const modal = document.getElementById('myModal');
     const closeModalBtn = document.querySelector('.close');
+    
+    
 
     function displayModal(event) {
         const animalCard = event.target.closest('.animal-card');
@@ -17,13 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => response.json())
             .then(data => {
-                const modalContent = modal.querySelector('.modal-content');
+                const modalContent = modal.querySelector('#dynamic-content');
                 modalContent.innerHTML = ''; // Clear previous content
+                
                 const animal = data[0]
 
                 const listImagePath = animal.ImagePaths.replace(/[()']/g, '')  
-                .split(', ') 
-                .map(filename => filename.trim());
+                .split(',') 
 
                 // Main image display
                 const bigImage = document.createElement('img');
@@ -41,12 +43,22 @@ document.addEventListener('DOMContentLoaded', function() {
                     const thumbImage = document.createElement('img');
                     thumbImage.src = `../../../uploads/image/${animal.AnimalID}/${image}`;
                     thumbImage.alt = animal.name;
-                    thumbImage.classList.add(index === 0 ? 'active' : ''); // Highlight the first image
+
+                    // Highlight the first image by adding 'active' class only if index is 0
+                    if (index === 0) {
+                        thumbImage.classList.add('active');
+                    }
+
                     thumbImage.addEventListener('click', () => {
                         bigImage.src = thumbImage.src; // Change main image on click
-                        modalContent.querySelector('.thumbnails img.active').classList.remove('active');
+
+                        const currentActive = modalContent.querySelector('.thumbnails img.active');
+                        if (currentActive) {
+                            currentActive.classList.remove('active');
+                        }
                         thumbImage.classList.add('active');
                     });
+
                     thumbnailsDiv.appendChild(thumbImage);
                 });
 
@@ -59,6 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p>${animal.breed}</p>
                     <!-- Add more information here -->
                 `;
+
+
                 modalContent.appendChild(animalInfo);
 
                 modal.style.display = 'block'; // Show the modal
