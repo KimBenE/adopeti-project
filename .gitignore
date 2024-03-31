@@ -5,3 +5,4 @@ package-lock.json
 www/service-error.log
 www/service.log
 uploads/*
+uploads/*/*/*
