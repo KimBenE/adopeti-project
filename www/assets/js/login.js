@@ -8,7 +8,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     const password = formData.get("password");
 
     // Make request to backend API
-    fetch("http://adopeti.xyz:3000/users/login", {
+    fetch("/users/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -18,7 +18,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     .then(response => {
         if (!response.ok) {
             // If first login attempt fails, try association login
-            return fetch("http://adopeti.xyz:3000/associations/login", {
+            return fetch("/associations/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -41,11 +41,20 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
             localStorage.setItem("username", username);
             localStorage.setItem("currentUser", data.role);
 
-            // redirect according to user type
-            if (data.role === "user") {
-                window.location.href = "assets/html/sadna_Home.html";
-            } else if (data.role === "association") {
-                window.location.href = "assets/html/sadna_Home_Association.html";
+            // Check if there is a redirect URL stored in sessionStorage
+            const redirectURL = sessionStorage.getItem('redirectURL');
+            if (redirectURL) {
+                // Clear the redirect URL from sessionStorage
+                sessionStorage.removeItem('redirectURL');
+                // Redirect the user to the stored URL
+                window.location.href = redirectURL;
+            } else {
+                // redirect according to user type
+                if (data.role === "user") {
+                    window.location.href = "assets/html/sadna_Home.html";
+                } else if (data.role === "association") {
+                    window.location.href = "assets/html/sadna_Home_Association.html";
+                }
             }
         } else {
             // Unsuccessful login

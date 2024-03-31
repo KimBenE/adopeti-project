@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
         // Make request to backend API for registration
-        fetch("http://adopeti.xyz:3000/registration", {
+        fetch("/registration", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

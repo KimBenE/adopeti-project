@@ -16,7 +16,7 @@ document.getElementById("userRegistrationForm").addEventListener("submit", funct
     const age = formData.get("age");
 
     // Make request to backend API
-    fetch("http://adopeti.xyz:3000/users/register", {
+    fetch("/users/register", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

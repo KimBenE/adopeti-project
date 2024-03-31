@@ -6,6 +6,46 @@ body {
     margin: 0; /* Remove default margin */
 }
 
+p {
+    text-align: center;
+}
+
+h1 {
+    color: rgb(228, 71, 66);
+    font-family: "Karma";
+    text-align: center;
+}
+
+h2 {
+    color: rgb(228, 71, 66);
+    text-align: center;
+    font-family: "Karma";
+    font-size: 30px;
+}
+
+
+main {
+    flex: 1; /* Make the main content area grow to fill available space */
+    margin-top: 150px;
+}
+.menu {
+    text-align: right;
+    font-size: 20px;
+    background-color: rgb(165, 235, 238);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(228, 71, 66);
+    color: white;
+    width: 100%;
+}
+
+.footer-push {
+    flex-grow: 1; /* Push the footer to the bottom */
+}
+
 .container {
     max-width: 400px;
     max-height: 400px;
@@ -41,41 +81,4 @@ button {
 button:hover {
     background-color: rgb(228, 71, 66);
     color:  white;
-}
-
-p {
-    text-align: center;
-}
-
-h1 {
-    color: rgb(228, 71, 66);
-    font-family: "Karma";
-    text-align: center;
-}
-
-h2 {
-    color: rgb(228, 71, 66);
-    text-align: center;
-    font-family: "Karma";
-    font-size: 30px;
-}
-main {
-    flex: 1; /* Make the main content area grow to fill available space */
-}
-.menu {
-    text-align: right;
-    font-size: 20px;
-    background-color: rgb(165, 235, 238);
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: rgb(228, 71, 66);
-    color: white;
-    width: 100%;
-}
-
-.footer-push {
-    flex-grow: 1; /* Push the footer to the bottom */
 }

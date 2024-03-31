@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const base_url = "http://adopeti.xyz:3000/animals/search";
+    const base_url = "/animals/search";
     const modal = document.getElementById('myModal');
     const closeModalBtn = document.querySelector('.close');
     
@@ -25,11 +25,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 const animal = data[0]
 
-                const listImagePath = animal.ImagePaths.replace(/[()']/g, '')  
-                .split(',') 
+                // Save animalId for the adopt request
+                localStorage.setItem("AnimalID", animal.AnimalID);
+
+                const encodedImages = JSON.parse(animal.encodedImages);
 
                 // Main image display
-                const imagePath = `../../../uploads/image/${animal.AnimalID}/${listImagePath[0]}`;
+                const imagePath = `data:image/png;base64, ${encodedImages[0]}`;
                 const bigImage = document.createElement('img');
                 imageExists(imagePath, function(exists) {
                     if (exists) {
@@ -48,9 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 thumbnailsDiv.classList.add('thumbnails');
 
                 // Add thumbnails
-                listImagePath.forEach((image, index) => {
+                encodedImages.forEach((image, index) => {
                     const thumbImage = document.createElement('img');
-                    const imagePath = `../../../uploads/image/${animal.AnimalID}/${image}`;
+                    const imagePath = `data:image/png;base64, ${image}`;
                     imageExists(imagePath, function(exists) {
                         if (exists) {
                             thumbImage.src = imagePath;
@@ -102,7 +104,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.addEventListener('click', displayModal);
 
+    const adoptBtn = document.querySelector('#adopt-btn');
+
+    adoptBtn.addEventListener('click', () => {
+        // Save animalId for the adopt request     
+        window.location.href = "../html/sadna_RequestAdopt.html";       
+    });
+
     closeModalBtn.addEventListener('click', () => {
+        localStorage.removeItem("AnimalID");
         modal.style.display = 'none'; // Close the modal
     });
 });

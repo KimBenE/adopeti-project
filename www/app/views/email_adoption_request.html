@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Adopeti - New Request Update</title>
+    <style>
+        h1, h2 {
+            color: #3a3939;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #fab1e2;">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+    <tr>
+        <td>
+            <h1 style="font-family: Trebuchet MS, sans-serif; padding: 20px;">Hi there!</h1>
+            <h2 style="font-family: Trebuchet MS, sans-serif; padding: 10px;">Your adoption request has been <strong><%= approvalStatus %></strong>: <strong><%= animalName %></strong>, a <strong><%=animalAge%></strong>-year-old <strong><%=animalType%></strong>.<br><%=description%></h2>
+            <img src="cid:unique_image_cid" alt="animalImage" style="display: block; margin: 0 auto;">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p><a href="<%=surveyLink%>">After adoption survey</a></p>
+            <img href="#" src="cid:logo" alt="logo" style="display: block; margin: 0 auto; size: 30%;">
+        </td>
+    </tr>
+</table>
+</body>
+</html>

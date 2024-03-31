@@ -7,21 +7,22 @@ document.getElementById("associationRegistrationForm").addEventListener("submit"
     const username = formData.get("username");
     const password = formData.get("password");
     const association_name = formData.get("association_name");
-    const residentialArea = formData.get("city");
+    const residentialArea = formData.get("area").toLowerCase();
+    const city = formData.get("city");
     const street_name = formData.get("street_name");
     const street_number = formData.get("street_number");
-    const address = residentialArea+" "+street_name+" "+street_number;
+    const address = city+" "+street_name+" "+street_number;
     const emailAddress = formData.get("email");
     const phone = formData.get("phone");
     const surveyLink = null;
 
     // Make request to backend API
-    fetch("http://adopeti.xyz:3000/associations/register", {
+    fetch("/associations/register", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({username, password, association_name, address, phone, emailAddress, surveyLink })
+        body: JSON.stringify({username, password, association_name, address, phone, emailAddress,residentialArea, surveyLink })
     })
     .then(response => {
         // Username already exist

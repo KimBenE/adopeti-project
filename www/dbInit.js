@@ -9,13 +9,12 @@ const createTables = [
         Name VARCHAR(255),
         Address TEXT,
         Phone VARCHAR(20),
-        emailAddress VARCHAR(20),
+        emailAddress VARCHAR(100),
+        Area TEXT,
         SurveyLink TEXT, -- URL to the satisfaction survey
         CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     );`,
-
-
 
     `CREATE TABLE IF NOT EXISTS Animals (
         AnimalID INT AUTO_INCREMENT PRIMARY KEY,
@@ -29,8 +28,7 @@ const createTables = [
         Status ENUM('available', 'adopted') NOT NULL DEFAULT 'available',
         ResidentialArea VARCHAR(255),
         description VARCHAR(255),
-        ImagePaths TEXT,
-        VideoPaths TEXT,
+        encodedImages JSON,
         CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         FOREIGN KEY (AssociationID) REFERENCES Associations(AssociationID)
@@ -85,9 +83,12 @@ const createTables = [
         AnimalName VARCHAR(255),
         BreedName VARCHAR(255),
         AnimalAge INT,
+        Gender ENUM('male', 'female'),
         HasMedicalProblems ENUM('yes', 'no'),
         MedicalIssuesDetails TEXT,
         GiveUpReason TEXT,
+        description VARCHAR(255),
+        encodedImages JSON,
         CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (UserID) REFERENCES Users(UserID)
       );`,

@@ -1,5 +1,10 @@
 
-body {font-family: "Karma", sans-serif}
+body {
+  height: 100%; /* This makes sure that the body takes the full height of the viewport */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
 
 .w3-bar-block .w3-bar-item {padding:20px}
 
@@ -27,23 +32,32 @@ h2{
     background-color: rgb(165, 235, 238);
 }
 
+#content-wrapper {
+  flex: 1; /* Content area grows to fill available space */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+main {
+  flex: 1; /* Make the main content area grow to fill available space */
+  margin-top: 150px;
+}
+
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: rgb(228, 71, 66);
-    color: white;
-    bottom: 0; 
-    position: relative;
-    width: 100%;
-  }
-  .footer-push {
-    flex-grow: 1; /* Push the footer to the bottom */
-  }
-  
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(228, 71, 66);
+  color: white;
+  position: fixed; /* Changed from absolute to fixed */
+  bottom: 0;
+  width: 100%;
+}
+
   main {
     flex: 1; /* Make the main content area grow to fill available space */
-  }
-
+    margin-top: 150px;
+}
 /**/
 .call-to-action {
     text-align: center;
@@ -121,7 +135,7 @@ footer {
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 50%;
 }
 
 .close {

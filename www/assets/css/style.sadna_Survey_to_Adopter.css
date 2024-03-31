@@ -35,6 +35,12 @@ body {
     background-color: rgb(165, 235, 238);
   }
   
+
+
+main {
+  flex: 1; /* Make the main content area grow to fill available space */
+  margin-top: 150px;
+}
   footer {
     text-align: center;
     padding: 10px;
@@ -125,4 +131,9 @@ body {
   /* לאחר האימוץ */
   .after_adoption {
     margin-bottom: 20px;
+  }
+
+  h4{
+    color:red;
+    text-align: center;
   }

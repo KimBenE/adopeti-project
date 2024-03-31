@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", async function() {
     try {
         // Fetch animal data
-        const response = await fetch("http://adopeti.xyz:3000/animals/create");
+        const response = await fetch("/animals/create");
         const animalData = await response.json();
 
         // Populate HTML elements with animal data

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var userName = document.getElementById('user_name').value.trim();
         var password = document.getElementById('password').value.trim();
         var association_name = document.getElementById('association_name').value.trim();
+        var area = document.getElementById('area').value.trim();
         var city = document.getElementById('city').value.trim();
         var street_name = document.getElementById('street_name').value.trim();
         var street_number = document.getElementById('street_number').value.trim();
@@ -14,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var phone = document.getElementById('phone').value.trim();
 
         // Check if any field is empty
-        if (!userName || !password || !association_name || !city || !street_name || !street_number || !email || !phone ) {
+        if (!userName || !password || !association_name || !city || !street_name || !street_number || !email || !phone || !area ) {
             alert('Please fill in all fields.');
             return;
         }
@@ -32,45 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Please enter a valid phone number in the format 050-0000000.');
             return;
         }
-
-        // Make request to backend API for registration
-        fetch("http://adopeti.xyz:3000/registration", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ 
-                username: userName, 
-                password: password,
-                association_name: association_name,
-                city: city,
-                street_name: street_name,
-                street_number: street_number,
-                email: email,
-                phone: phone
-            })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to register");
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Check if registration was successful
-            if (data.message === 'Registration successful') {
-                // Redirect to home page after successful registration
-                window.location.href = "../sadna_Haome_Association.html";
-            } else {
-                // Unsuccessful registration
-                showError("Failed to register. Please try again later.");
-            }
-        })
-        .catch(error => {
-            // Registration error
-            showError("Failed to register. Please try again later.");
-            console.error("Registration error:", error);
-        });
     });
 });
 

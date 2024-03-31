@@ -4,7 +4,7 @@ const db = require('../db'); // Import the database connection
 
 // Define a route to handle user registration
 router.post('/register', (req, res) => {
-    const { username, password, association_name, address, phone, emailAddress, surveyLink } = req.body;
+    const { username, password, association_name, address, phone, emailAddress,residentialArea, surveyLink } = req.body;
   
     // Check if the username already exists in the database
     const checkQuery = 'SELECT * FROM associations WHERE username = ?';
@@ -19,8 +19,8 @@ router.post('/register', (req, res) => {
         return res.status(409).json({ error: 'Username already exists' });
       } else {
         // Username is available; insert the new user into the database
-        const insertQuery = 'INSERT INTO associations ( username, password, name, address, phone, emailAddress, surveyLink) VALUES (?, ?, ?, ?, ?, ?, ?)';
-        db.query(insertQuery, [  username, password, association_name, address, phone, emailAddress, surveyLink], (err, results) => {
+        const insertQuery = 'INSERT INTO associations ( username, password, name, address, phone, emailAddress,area, surveyLink) VALUES (?, ?, ?, ?, ?, ?,?, ?)';
+        db.query(insertQuery, [  username, password, association_name, address, phone, emailAddress,residentialArea, surveyLink], (err, results) => {
           if (err) {
             console.error('Error executing database query:', err);
             return res.status(500).json({ error: 'Internal server error' });
@@ -146,6 +146,7 @@ router.get('/:username', (req, res) => {
         }
     });
 });
+
 
 // function to validate user credentials
 function isValidCredentials(username, password) {

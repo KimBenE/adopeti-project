@@ -23,6 +23,23 @@ h2 {
     font-family: "Karma";
     font-size: 30px;
 }
+.stats-container {
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+    justify-content: space-between; /* Puts space between the h4 and canvas */
+    flex-wrap: wrap; /* Allows items to wrap onto the next line if not enough space */
+    margin-bottom: 20px; /* Adds some space between each stats container */
+  }
+  
+  .stats-container h4 {
+    flex-basis: 30%; /* Adjust based on your content and preference */
+    margin-right: 10px; /* Adds some space between the h4 and the canvas */
+  }
+  
+  .stats-container canvas {
+    flex-grow: 1; /* Allows the canvas to grow and fill available space */
+  }
+  
 
 .menu {
     text-align: right;
@@ -30,16 +47,28 @@ h2 {
     background-color: rgb(165, 235, 238);
 }
 
+main {
+    flex: 1; /* Make the main content area grow to fill available space */
+    margin-top: 150px;
+}
+
+#question_1,
+#question_2,
+#question_3,
+#question_4,
+#question_5,
+#question_6,
+#question_7 {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 footer {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     padding: 10px;
     background-color: rgb(228, 71, 66);
     color: white;
     text-align: center;
-}
-
-main {
-    flex: 1; /* Make the main content area grow to fill available space */
+    margin-top: auto; /* Push the footer to the bottom */
 }

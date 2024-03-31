@@ -17,26 +17,8 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
-      <div class="container-fluid">
-        <img class="bigDog" src="../נספחים/LOGO Pet-no background.png" alt="Bootstrap" width="150" height="100" alt="">
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0"></ul>
-        </div>
-
-      </div>
-    </nav>
-
-    <br> <br> <br> <br> <br> <br>
-  </header>
-
+ 
+  <div id="header-placeholder"></div>
 
   <main>
 
@@ -113,12 +95,23 @@
   </footer>
   <script src="../js/register_user.js"></script>
   <script>
-    // Fetch the header HTML and insert it into the placeholder
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-        });
-  </script>
+    // Fetch the HTML header and insert it into the placeholder
+  fetch('header.html')
+  .then(response => response.text())
+  .then(data => {
+  document.getElementById('header-placeholder').innerHTML = data;
+  
+  // Highlight the current page
+  const currentPagePath = window.location.pathname; // Get the current page path
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  for (const navLink of navLinks) {
+    const linkHref = navLink.href;
+    if (linkHref.endsWith(currentPagePath)) {
+      navLink.classList.add('active'); // Add 'active' class to the current page link
+  }
+  }
+  });
+  
+  </script>  
 </body>
 

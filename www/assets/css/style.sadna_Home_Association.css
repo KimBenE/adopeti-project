@@ -35,6 +35,11 @@ h2 {
     background-color: rgb(165, 235, 238);
 }
 
+
+main {
+    flex: 1; /* Make the main content area grow to fill available space */
+    margin-top: 150px;
+}
 footer {
     position: fixed;
     bottom: 0;

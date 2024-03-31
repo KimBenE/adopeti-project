@@ -2,9 +2,63 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db'); // Import the database connection
 
+
+router.get('/getAnswersInfo', (req, res) => {
+
+    console.log("In getAnswersInfo");
+
+    const association = req.query.association;
+    const question = req.query.question;
+
+    console.log("In getAnswersInfo: association=", association);
+    console.log("In getAnswersInfo: question=", question);
+
+    const query = `
+        SELECT answer_num, COUNT(answer_num) AS count_responders 
+        FROM feedback_answers
+        WHERE association=? AND question_num = ?
+        GROUP BY question_num, answer_num
+        ORDER BY answer_num
+    `;
+
+    db.query(query, [association,question], (err, results) => {
+        if (err) {
+            console.error('In getAnswersInfo: Error getting details from database:', err);
+            res.status(500).json({ error: 'Internal server error' });
+            return;
+        }
+
+        if (results.length > 0) {
+            let answers = {"1": 0, "2": 0, "3": 0, "4": 0, "5": 0};
+            //let answers = [0, 0, 0, 0, 0];
+
+            // details found
+            results.forEach(answerRow => {
+                let answerNum = answerRow.answer_num;
+                let countResponders = answerRow.count_responders;
+                answers[answerNum] = countResponders;
+            });
+
+            // for (let i=0; i<results.length; i++)
+            // {
+            //     let answerRow = results[i];
+            //     let answerNum = answerRow.answer_num;
+            //     answers[answerNum] = answerRow.count_responders;
+            // }
+
+            res.status(200).json(answers);
+        } else {
+            // not found
+            res.status(404).json({ error: 'Deails not found in database' });
+        }
+    });
+});
+
+
 // Define a route to handle user registration
 router.post('/register', (req, res) => {
-    const { username, password, type, fullName, familySituation, phone, emailAddress, age, residentialArea } = req.body;
+    const { username, password, type, fullName, familySituation, phone,
+             emailAddress, age, residentialArea } = req.body;
   
     // Check if the username already exists in the database
     const checkQuery = 'SELECT * FROM users WHERE username = ?';
@@ -53,6 +107,28 @@ router.post('/login', async (req, res) => {
         return res.status(500).json({ error, ok: false });
     }
 });
+
+// Sivan: temp
+// router.post('/create_forms_table', async (req, res) => {
+//     const { sql } = req.body;
+
+//     try {
+//         let result = await createTableForms();
+        
+//         if (result) {
+//             // Authentication successful
+//             return res.status(200).json({ message: 'Table created', ok: true });
+//         } else {                                                                    
+//             // Authentication failed
+//             return res.status(401).json({ error: 'Failed to create table', ok: false });
+//         }
+//     } catch (error) {
+//         // Handle errors like database errors
+//         return res.status(500).json({ error, ok: false });
+//     }
+// });
+
+
 
 // Define a route to handle user update
 router.patch('/update/:username', (req, res) => {
@@ -119,7 +195,7 @@ router.patch('/update/:username', (req, res) => {
 
         // Check if any row is affected
         if (results.affectedRows === 0) {
-            return res.status(404).json({ error: 'User not found' });
+            return res.status(404).json({ error: '' });
         } else {
             // User update successful
             return res.status(200).json({ message: 'User updated successfully' });
@@ -152,32 +228,8 @@ router.post('/updatePreferences', (req, res) => {
     });
 });
 
-router.get('/:username', (req, res) => {
-    const username = req.params.username;
 
-    const query = `
-        SELECT *
-        FROM users
-        WHERE Username = ?;
-    `;
 
-    db.query(query, [username], (err, results) => {
-        if (err) {
-            console.error('Error getting user details:', err);
-            res.status(500).json({ error: 'Internal server error' });
-            return;
-        }
-
-        if (results.length > 0) {
-            // Association details found
-            const user = results[0];
-            res.status(200).json({user});
-        } else {
-            // Association not found
-            res.status(404).json({ error: 'User not found' });
-        }
-    });
-});
 
 router.get('/:username', (req, res) => {
     const username = req.params.username;
@@ -205,6 +257,60 @@ router.get('/:username', (req, res) => {
         }
     });
 });
+
+router.get('/byId/:userid', (req, res) => {
+    const userid = req.params.userid;
+
+    const query = `
+        SELECT *
+        FROM users
+        WHERE UserID = ?;
+    `;
+
+    db.query(query, [userid], (err, results) => {
+        if (err) {
+            console.error('Error getting user details:', err);
+            res.status(500).json({ error: 'Internal server error' });
+            return;
+        }
+
+        if (results.length > 0) {
+            // Association details found
+            const user = results[0];
+            res.status(200).json({user});
+        } else {
+            // Association not found
+            res.status(404).json({ error: 'User not found' });
+        }
+    });
+});
+
+// router.get('/:username', (req, res) => {
+//     const username = req.params.username;
+
+//     const query = `
+//         SELECT *
+//         FROM users
+//         WHERE Username = ?;
+//     `;
+
+//     db.query(query, [username], (err, results) => {
+//         if (err) {
+//             console.error('Error getting user details:', err);
+//             res.status(500).json({ error: 'Internal server error' });
+//             return;
+//         }
+
+//         if (results.length > 0) {
+//             // Association details found
+//             const user = results[0];
+//             res.status(200).json({user});
+//         } else {
+//             // Association not found
+//             res.status(404).json({ error: 'User not found' });
+//         }
+//     });
+// });
 
 // Define a route to handle form submission
 router.post('/submitForm', async (req, res) => {
@@ -236,16 +342,19 @@ router.post('/submitForm', async (req, res) => {
 
 //function to submit giveaway requests
 router.post('/giveaway-request', (req, res) => {
-    const { UserID,contactdetails,AnimalType, AnimalName, BreedName, AnimalAge, medicalHistorySelection, medicalHistory, reasonsForGivingAway } = req.body;
-  
+    let { UserID,AnimalType,contactdetails, AnimalName,breed,gender, AnimalAge, medicalHistorySelection, medicalHistory, reasonsForGivingAway,description,encodedImages } = req.body;
+    
+    // Ensure encodedImages is a valid JSON string
+    encodedImages = JSON.stringify(encodedImages);
+
     // SQL query to insert the giveaway request
     const insertQuery = `
-      INSERT INTO GiveUpRequests (UserID, ContactInformation,AnimalType,AnimalName,BreedName,AnimalAge,HasMedicalProblems,MedicalIssuesDetails,GiveUpReason)
-      VALUES  (?,?,?,?,?,?,?,?,?)
+    INSERT INTO GiveUpRequests (UserID, ContactInformation, AnimalType, AnimalName, BreedName, AnimalAge, Gender, HasMedicalProblems, MedicalIssuesDetails, GiveUpReason, description, encodedImages)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);    
     `;
   
     // Execute the query
-    db.query(insertQuery, [UserID,contactdetails,AnimalType, AnimalName, BreedName, AnimalAge, medicalHistorySelection, medicalHistory, reasonsForGivingAway], (err, results) => {
+    db.query(insertQuery, [ UserID, contactdetails,AnimalType,AnimalName,breed,AnimalAge,gender,medicalHistorySelection,medicalHistory,reasonsForGivingAway, description, encodedImages ], (err, results) => {
       if (err) {
         console.error('Error executing database query:', err);
         return res.status(500).json({ error: 'Internal server error' });
@@ -260,7 +369,30 @@ router.post('/giveaway-request', (req, res) => {
   });
   
 
-
+//function to submit adopt requests
+router.post('/adopt-request', (req, res) => {
+    const { AnimalID, UserID, AssociationID, ApprovalStatus, RequestText } = req.body;
+  
+    // SQL query to insert the giveaway request
+    const insertQuery = `
+      INSERT INTO AdoptionRequests (AnimalID, UserID, AssociationID, ApprovalStatus, RequestText)
+      VALUES  (?,?,?,?,?)
+    `;
+  
+    // Execute the query
+    db.query(insertQuery, [AnimalID, UserID, AssociationID, ApprovalStatus, RequestText], (err, results) => {
+      if (err) {
+        console.error('Error executing database query:', err);
+        return res.status(500).json({ error: 'Internal server error' });
+      }
+  
+      // Send a success response
+      res.json({
+        message: 'Giveaway request submitted successfully',
+        requestID: results.insertId // AUTO_INCREMENT is used for RequestID
+      });
+    });
+  });
 
 
 
@@ -284,6 +416,92 @@ function isValidCredentials(username, password) {
         });
     });
 }
+
+
+
+// Define a route to add user answers to adoption feedback form
+router.post('/addFeedbackAnswers', (req, res) => {
+        const { signedin_username, association, satisfaction_1,satisfaction_2,satisfaction_3,
+            satisfaction_4,satisfaction_5,satisfaction_6,satisfaction_7  } = req.body;
+
+        const insertQuery = 
+            'INSERT INTO feedback_answers ' +
+            '( username, association, question_num, answer_num) ' +
+            'VALUES ' + 
+            '(?, ?, 1, ?),' +
+            '(?, ?, 2, ?),' +
+            '(?, ?, 3, ?),' +
+            '(?, ?, 4, ?),' +
+            '(?, ?, 5, ?),' +
+            '(?, ?, 6, ?),' +
+            '(?, ?, 7, ?)';
+        db.query(   insertQuery, 
+                    [signedin_username, association, satisfaction_1,
+                     signedin_username, association, satisfaction_2,
+                     signedin_username, association, satisfaction_3,
+                     signedin_username, association, satisfaction_4, 
+                     signedin_username, association, satisfaction_5, 
+                     signedin_username, association, satisfaction_6, 
+                     signedin_username, association, satisfaction_7
+                    ], 
+                    (err, results) => {
+                        if (err) {
+                            console.error('Error executing database query:', err);
+                            return res.status(500).json({ error: 'Failed to add feedback' });
+                        }
+                        // User registration successful
+                        return res.status(201).json({ message: 'Feedback successfully added' });
+                    });
+      });
+
+
+      router.post('/checkIfFeedbackAlreadyFilled', (req, res) => {
+
+        console.log('In checkIfFeedbackAlreadyFilled');
+
+        const { signedin_username, enteredAssociation} = req.body;
+
+        console.log(`In checkIfFeedbackAlreadyFilled. received: ${signedin_username}, ${enteredAssociation}`);
+
+        const checkQuery = 'SELECT username FROM feedback_answers WHERE username = ? AND association = ?';
+        db.query(checkQuery, [signedin_username, enteredAssociation], (err, results) => {
+            if (err) {
+                console.error('Error executing database query in checkIfFeedbackAlreadyFilled:', err);
+                //return reject('Internal server error');
+                return res.status(500).json({ error: 'Failed to check if feedback already filled' });
+            }
+
+            if (results.length == 0) {
+                return res.status(200).json({ msg: "User didn't fill this feedback form" });
+            }
+
+            return res.status(600).json({ msg: "User already filled this feedback form" });
+        });
+
+      });
+
+
+    
+
+      //Sivan: temp
+// async function createTableForms()
+// {
+//     const sql = 'CREATE TABLE form_answers (' +
+//                   'username VARCHAR(50) NOT NULL, ' +
+//                   'question_num INT NOT NULL, ' +
+//                   'answer_num INT NOT NULL)';
+//     db.query(checkQuery, [username], (err, results) => {
+//       if (err) {
+//         console.error('Error executing database query:', err);
+//         return res.status(500).json({ error: 'Internal server error' });
+//       }
+  
+  
+//           // User registration successful
+//           return res.status(201).json({ message: 'Table created successfully' });
+//     });
+
+// }
 
 
 module.exports = router;

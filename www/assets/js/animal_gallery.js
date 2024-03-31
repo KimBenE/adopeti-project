@@ -1,14 +1,15 @@
 // Function to fetch data and update the gallery
 function updateGallery() {
-    const base_url = "http://adopeti.xyz:3000/animals/search";
+    const base_url = "/animals/search";
     const animalType = document.getElementById('animalType').value;
+    const gender = document.getElementById('animalGender').value;
 
     fetch(base_url, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ animalType })
+        body: JSON.stringify({ animalType, gender })
     })
     .then(response => response.json())
     .then(data => {
@@ -16,29 +17,25 @@ function updateGallery() {
         const gallery = document.getElementById('gallery');
         gallery.innerHTML = ''; // Clear existing content
         data.forEach(animal => {
-            const listImagePath = animal.ImagePaths.replace(/[()']/g, '')  // Remove parentheses and single quotes
-            .split(',') // Split by comma
-            .map(filename => filename.trim());
+            const encodedImages = JSON.parse(animal.encodedImages);
 
             const animalCard = document.createElement('li');
             animalCard.classList.add('animal-card');
             animalCard.dataset.animalId = animal.AnimalID;
 
-            const imagePath = `../../../uploads/image/${animal.AnimalID}/${listImagePath[0]}`;
+            const imagePath = `data:image/png;base64, ${encodedImages[0]}`;
             imageExists(imagePath, function(exists) {
                 if (exists) {
                     animalCard.innerHTML = `
                         <img src="${imagePath}" alt="${animal.Name}">
                         <h3>${animal.Name}</h3>
                         <p>${animal.Breed}</p>
-                        <!-- Add more information as needed -->
                     `;
                 } else {
                     animalCard.innerHTML = `
                         <img src="${defaultImagePath}" alt="Default Image">
                         <h3>${animal.Name}</h3>
                         <p>${animal.Breed}</p>
-                        <!-- Add more information as needed -->
                     `;
                 }
 
@@ -61,19 +58,21 @@ window.onload = function() {
 
     // Listen for changes in filter inputs and update the gallery accordingly
     document.getElementById('animalType').addEventListener('change', updateGallery);
+    document.getElementById('animalGender').addEventListener('change', updateGallery);
     // Add event listeners for other filter inputs as needed
 };
 
 // Check if the image file exists
 function imageExists(url, callback) {
     const img = new Image();
+    img.src = url;
+
     img.onload = function() {
         callback(true);
     };
     img.onerror = function() {
         callback(false);
     };
-    img.src = url;
 }
 
 

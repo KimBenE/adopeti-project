@@ -1,4 +1,3 @@
-
 document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault(); 
 
@@ -8,7 +7,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     const password = formData.get("password");
 
     // Make request to backend API
-    fetch("http://adopeti.xyz:3000/users/login", {
+    fetch("/users/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -18,7 +17,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     .then(response => {
         if (!response.ok) {
             // If first login attempt fails, try association login
-            return fetch("http://adopeti.xyz:3000/associations/login", {
+            return fetch("/associations/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

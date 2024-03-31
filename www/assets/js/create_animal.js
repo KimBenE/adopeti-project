@@ -1,4 +1,6 @@
 
+let encodedImages = [];
+
 document.getElementById("createAnimalForm").addEventListener("submit", async function(event) {
     event.preventDefault(); 
 
@@ -23,22 +25,13 @@ document.getElementById("createAnimalForm").addEventListener("submit", async fun
             medicalHistory = formData.get("medical_issues_details_text");
         }
 
-        // Get list of uploaded file names
-        const imageInput = document.getElementById('image');
-        const videoInput = document.getElementById('video');
-        const imageFiles = imageInput.files;
-        const videoFiles = videoInput.files;
-
-        const imagePaths = getFileNames(imageFiles);
-        const videoPaths = getFileNames(videoFiles);
-
         // Make request to backend API
-        const response = await fetch("http://adopeti.xyz:3000/animals/create", {
+        const response = await fetch("/animals/create", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ associationId, animalType, gender, name, breed, age, medicalHistory, residentialArea, description, imagePaths, videoPaths })
+            body: JSON.stringify({ associationId, animalType, gender, name, breed, age, medicalHistory, residentialArea, description, encodedImages})
         });
 
         // Handle response
@@ -47,26 +40,6 @@ document.getElementById("createAnimalForm").addEventListener("submit", async fun
             console.error("Register error:", await response.json());
         } else if (response.status == 201) {
             const data = await response.json();
-            const animalId = data.animalId;
-
-            // Upload files
-            const framesData = new FormData();
-            const videosData = new FormData();
-            const imageInput = document.getElementById('image');
-            const videoInput = document.getElementById('video');
-        
-            // Append uploaded image files
-            for (const file of imageInput.files) {
-                framesData.append('image', file);
-            }
-        
-            // Append uploaded video files
-            for (const file of videoInput.files) {
-                videosData.append('video', file);
-            }
-        
-            uploadFiles(framesData, animalId);
-            uploadFiles(videosData, animalId);
 
             window.location.href = "../html/sadna_Home_Association.html";
         } else if (!response.ok) {
@@ -99,29 +72,10 @@ function checkFileSize(input) {
     }
 }
 
-// Function to upload files
-async function uploadFiles(formData, id) {
-
-    try {
-      const response = await fetch(`http://adopeti.xyz:3000/animals/upload/${id}`, {
-        method: 'POST',
-        body: formData
-      });
-  
-      if (response.ok) {
-        console.log('Files uploaded successfully');
-      } else {
-        console.error('Failed to upload files');
-      }
-    } catch (error) {
-      console.error('Error uploading files:', error);
-    }
-  }
-
 async function getAssociationDetails() {
     try {
         // Get association details
-        const response = await fetch(`http://adopeti.xyz:3000/associations/${localStorage.getItem("username")}`, {
+        const response = await fetch(`/associations/${localStorage.getItem("username")}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -136,7 +90,7 @@ async function getAssociationDetails() {
             // Association found
             const data = await response.json();
             const associationId = data.AssociationID;
-            const residentialArea = data.Address;
+            const residentialArea = data.Area;
             return { associationId, residentialArea };
         } else {
             // Any other error
@@ -149,10 +103,27 @@ async function getAssociationDetails() {
     }
 }
 
-function getFileNames(files) {
-    const fileNames = [];
+
+function handleImageUpload(event) {
+    const files = event.target.files;
+
+    // Clear existing encoded images
+    encodedImages = [];
+
+    // Loop through each file
     for (let i = 0; i < files.length; i++) {
-      fileNames.push(files[i].name);
+        const file = files[i];
+        const reader = new FileReader();
+
+        // Closure to capture the file information
+        reader.onload = (function (file) {
+            return function (e) {
+                // Push base64 string to the global variable
+                encodedImages.push(e.target.result.split(',')[1]);
+            };
+        })(file);
+
+        // Read the image file as a data URL
+        reader.readAsDataURL(file);
     }
-    return fileNames;
 }

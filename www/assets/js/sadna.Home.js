@@ -17,7 +17,7 @@ async function savePreferences() {
     const UserID = await getUserId();
 
         // Make request to backend API
-    fetch("http://adopeti.xyz:3000/users/updatePreferences", {
+    fetch("/users/updatePreferences", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
@@ -51,7 +51,7 @@ async function savePreferences() {
 async function getUserId() {
     try {
         // Get user details
-        const response = await fetch(`http://adopeti.xyz:3000/users/${localStorage.getItem("username")}`, {
+        const response = await fetch(`/users/${localStorage.getItem("username")}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
