@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('Form').addEventListener('submit', function (event) {
+    document.getElementById('associationRegistrationForm').addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent the default form submission
         
         // Retrieve form values
